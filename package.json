@@ -1,0 +1,11 @@
+{
+  "name": "axiosText",
+  "version": "1.0.0",
+  "description": "a axios Text",
+  "main": "app.js",
+  "author": "zzc",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.0"
+  }
+}
