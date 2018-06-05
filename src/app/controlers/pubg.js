@@ -3,16 +3,19 @@ import axios from 'axios'
 
 export const name = async ctx => {
     
-    const url = 'https://api.pubgtracker.com/v2/profile/pc/Express_Koa'
+    const url = 'https://www.baidu.com'//'https://api.pubgtracker.com/v2/profile/pc/Express_Koa'
 
     function app (url){
         return new Promise((reslove, reject) => {
-            axios.get(url, {
-                headers: {
-                    'TRN-Api-Key': '0f42680c-adc4-4a56-867e-3fbab1c868e3'
-                }
-            }).then(res => {
-                reslove(res)
+            axios.get(url
+            //     , {
+            //     headers: {
+            //         'TRN-Api-Key': '0f42680c-adc4-4a56-867e-3fbab1c868e3'
+            //     }
+            // }
+        ).then(res => {
+                const zzca = '辣鸡psk'
+                reslove(zzca)
                 })
                 .catch(err => {
                     reject(err)
