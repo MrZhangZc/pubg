@@ -1,0 +1,29 @@
+{
+	"apps":[
+		{
+			"name": "pubg",
+			"script": "start.js",
+			"env": {
+				"COMMON_VARIABLE": "true"
+			},
+			"env_production":{
+				"NODE_ENV": "production"
+			}
+		}
+	],
+	"deploy": {
+		"production": {
+			"user": "zzc_manager",
+			"host": ["60.205.212.67"],
+			"port": "22",
+			"ref" : "origin/master",
+			"repo": "git@github.com:MrZhangZc/pubg.git",
+			"path": "/www/pubg/production",
+			"ssh_options": "StrictHostKeyChecking=no",
+			"post-deploy": "npm install --registry=https://registry.npm.taobao.org && pm2 startOrRestart ecosystem.json --env production",
+			"env": {
+				"NODE_ENV": "production"
+			}
+		}
+	}
+}
