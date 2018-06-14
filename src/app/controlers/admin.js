@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
-// const Weapon = mongoose.model('Weapon')
+const Weapon = mongoose.model('Weapon')
 
-// export const houtai = async ctx => {
+// export const getinformation = async ctx => {
 //     try {
 
 //         let sortby = ctx.query.sortby ? ctx.query.sortby : 'name'

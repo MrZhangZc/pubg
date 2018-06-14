@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-// import { get, getju } from '../app/controlers/weapon'
+import { getinformation, oneInformation } from '../app/controlers/information'
 // import { houtai, deletes } from '../app/controlers/admin'
 import { home } from '../app/controlers/page'
 
@@ -7,7 +7,8 @@ export const router = app => {
     const router = new Router()
 
     router.get('/', home)
-    // router.get('/post/:id', getju)
+    router.get('/information', getinformation)
+    router.get('/information/:id', oneInformation)
 
     // router.get('/admin/post', houtai)
     // router.get('/admin/post/delete:id', deletes)

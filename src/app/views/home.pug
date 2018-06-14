@@ -4,8 +4,32 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/css/base.css")
         link(rel="stylesheet", href="/css/home.css")
         title 恰鸡盒
     body
-      img(src="/images/logo.png", alt="恰鸡盒")
-      h1 我的的作业恰鸡盒
+      .container
+        .header
+          .header_left
+            img.logo(src="/images/logo.png", alt="恰鸡盒")
+          .header_right
+            a(href="#").login 登录&nbsp;&nbsp;&nbsp;&nbsp;
+            a(href="#").register 注册&nbsp;&nbsp;&nbsp;
+        .content
+          .content_nav
+            a(href="#") 战绩查询
+            a(href="#") 武器装备
+            a(href="#") 游戏新闻
+            a(href="#") 个人中心
+          .content_main
+            .content_left
+              .sidle_container
+                .sidle_list
+                  img(src="/images/1.jpg", alt="")
+                  img(src="/images/2.jpg", alt="")
+                  img(src="/images/3.jpg", alt="")
+            .content_right
+              h1 
+                a(href='/information') 头条资讯
+      script(src="/js/slider.js")
+        

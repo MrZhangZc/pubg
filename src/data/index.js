@@ -3,10 +3,12 @@ import mongoose from 'mongoose'
 import config from '../config'
 import loremIpsum from 'lorem-ipsum'
 
-require('../app/schema/resource')
+// require('../app/schema/resource')
 require('../app/schema/weapon')
-require('../app/schema/armor')
-require('../app/schema/consumable')
+// require('../app/schema/armor')
+// require('../app/schema/consumable')
+
+require('../app/controlers/information')
 
 export const database = () => {
     mongoose.set('debug', true)

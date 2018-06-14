@@ -1,0 +1,27 @@
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
+    background-image: url('/images/bg.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.container .information{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 18%;
+    background-color: #333333;
+}
+
+.container .information .con {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.container .name {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.container .bullet {
+    color: #fff;
+}
