@@ -7,7 +7,7 @@ import { join } from 'path'
 import { database } from './database'
 import { router } from './router'
 
-const PORT = process.env.PORT || '3001'
+const PORT = process.env.PORT || '5001'
 const HOST = process.env.HOST || '127.0.0.1'
 const r = path => join(__dirname, path)
 
