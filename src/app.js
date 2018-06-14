@@ -1,11 +1,29 @@
 import Koa from 'koa'
+import KoaViews from 'koa-views'
+import KoaStatic from 'koa-static'
+import bodyparser from 'koa-bodyparser'
+import session from 'koa-session'
+import { join } from 'path'
+import { database } from './database'
 import { router } from './router'
+
+const PORT = process.env.PORT || '3001'
+const HOST = process.env.HOST || '127.0.0.1'
+const r = path => join(__dirname, path)
+
+database()
 
 const app = new Koa()
 
+app.use(bodyparser())
+
+app.use(KoaStatic(r('../static')))
+app.use(KoaViews(r('./app/views'), {
+    extension: 'pug'
+}))
+
 router(app)
 
-app.listen(5001, () => {
-    console.log(`server Success on : 5001`)
+app.listen(PORT, HOST, () => {
+    console.log(`server Success on : ${HOST} : ${PORT}`)
 })
-

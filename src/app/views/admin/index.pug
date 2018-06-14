@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title #{title}
+    body
+        table
+            thead
+                tr
+                    th 
+                        if sortby === 'name'
+                            if(sortdir === 'desc')
+                                a(href="/admin/post/?page=" + pageNum + '&sortby=name&sortdir=asc') 标题
+                            else
+                                a(href="/admin/post/?page=" + pageNum + '&sortby=name&sortdir=desc') 标题
+                        else
+                            a(href="/admin/post/?page=" + pageNum + '&sortby=name&sortby=asc') 标题
+                    th 管理
+            tbody
+            each weapon in weapons
+                tr
+                    td #{weapon.name}
+                    td
+                        a(href="/post/" + weapon._id, targrt='_blank') 查看
+                        a(href="/admin/post/edit" + weapon._id, targrt='_blank') 编辑
+                        a(href="/admin/post/delete" + weapon._id, targrt='_blank') 删除
+        if pageCount > 1
+            nav.paeg
+                ul
+                    - var currentPage = 1
+                    while currentPage < pageCount
+                        if(currentPage === pageNum)
+                            li.active
+                                a(href="/admin/post?page=" + currentPage + '&sortby=' + sortby + '&sortdir=' + sortdir)= currentPage++
+                        else
+                            li
+                                a(href="/admin/post?page=" + currentPage + '&sortby=' + sortby + '&sortdir=' + sortdir)= currentPage++

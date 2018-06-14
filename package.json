@@ -1,18 +1,26 @@
 {
-  "name": "axiosText",
+  "name": "blog_koa",
   "version": "1.0.0",
-  "description": "a axios Text",
-  "main": "app.js",
+  "description": "koa mongod blog",
+  "main": "start.js",
   "author": "zzc",
   "license": "MIT",
-  "dependencies": {
-    "axios": "^0.17.0",
-    "koa": "^2.5.1",
-    "koa-router": "^7.4.0"
-  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.1",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.4",
+    "lorem-ipsum": "^1.0.4",
+    "mongoose": "^5.1.0",
+    "pug": "^2.0.3",
+    "slug": "^0.9.1",
+    "truncate": "^2.0.1"
   }
 }

@@ -1,0 +1,48 @@
+body{
+    background-color: aqua
+}
+
+.con {
+    width: 70%;
+    margin: 20px auto;
+}
+
+.con .name {
+    font-size: 24px;
+}
+
+.active{
+    font-weight: bold;
+    background-color: brown;
+}
+
+.paeg ul{
+    list-style: none;
+    display: flex;
+    margin-left: 250px;
+}
+
+.paeg ul li a{
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #000;
+    display: inline-block;
+    text-align: center;
+}
+
+.postju{
+    width: 70%;
+    margin: 50px auto;
+}
+
+.postju .name{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.postju .buttle{
+    text-align: justify;
+    line-height: 50px;
+}

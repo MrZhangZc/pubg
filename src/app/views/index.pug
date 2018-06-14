@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/css/index.css")
+        title Document
+    body
+        each weapon in weapons
+            .con
+                .name
+                    a(href='/post/' + weapon._id, target="_black") #{truncate(weapon.name,20)}
+                .bullet #{weapon.bullet}
+        if pageCount > 1
+            nav.paeg
+                ul
+                    - var currentPage = 1
+                    while currentPage < pageCount
+                        if(currentPage === pageNum)
+                            li.active
+                                a(href="?page=" + currentPage)= currentPage++
+                        else
+                            li
+                                a(href="?page=" + currentPage)= currentPage++
