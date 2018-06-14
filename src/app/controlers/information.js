@@ -43,7 +43,7 @@ export const oneInformation = async ctx => {
     
     let weapon = await Weapon.findById(conditions)
     console.log('1111111111111',weapon)
-    await ctx.render('oneInformation', {
+    await ctx.render('oneinformation', {
         title: '详情页',
         weapon: weapon
     })

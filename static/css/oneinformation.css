@@ -1,0 +1,6 @@
+body {
+    font: normal 100% Helvetica, Arial, sans-serif;
+    background-image: url('/images/bg2.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
