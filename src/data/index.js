@@ -1,7 +1,11 @@
 
-import mongoose from 'mongoose'
-import config from '../config'
-import loremIpsum from 'lorem-ipsum'
+// import mongoose =  from 'mongoose'
+// import config from '../config'
+// import loremIpsum from 'lorem-ipsum'
+
+const mongoose = require('mongoose')
+const config = require('../config')
+const loremIpsum = require('lorem-ipsum')
 
 // require('../app/schema/resource')
 require('../app/schema/weapon')
