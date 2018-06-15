@@ -5,4 +5,5 @@ require('babel-core/register')({
 })
 
 require('babel-polyfill')
+//require('./src/pbugapi/go')
 require('./src/app')

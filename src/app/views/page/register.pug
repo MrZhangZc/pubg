@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen")
+        link(rel="stylesheet", href="/css/register.css")
+        title 注册
+    body
+      .register
+        h1 注册
+        form.form(method="post", action="admin/user/register" style="margin-top:20%;")
+          label(for="signupName") 用户名
+          input#signupName.input-sing(name="user[name]", type="text")
+          label(for="signupPassword") 密码&nbsp;&nbsp;&nbsp;
+          input#signupPassword.input-sing(name="user[password]", type="password")
+          button.btn.btn-success.btn-signin(type="submit") 注册

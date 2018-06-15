@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen")
+        link(rel="stylesheet", href="/css/base.css")
+        block css
+        title #{title}
+    body
+      .container
+        .header
+          .header_left
+            img.logo(src="/images/logo.png", alt="恰鸡盒")
+            a(href="/") 主页
+          .header_right
+            a(href="/login").login 登录&nbsp;&nbsp;&nbsp;&nbsp;
+            a(href="/register").register 注册&nbsp;&nbsp;&nbsp;
+        block content

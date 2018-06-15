@@ -19,7 +19,7 @@ export const getinformation = async ctx => {
         if (pageNum > pageCount) {
             pageNum = pageCount
         }
-        await ctx.render('information', {
+        await ctx.render('page/information', {
             weapons: weapon.slice((pageNum - 1) * pageSize, pageSize * pageNum),
             pageNum : pageNum,
             pageCount : pageCount
@@ -43,7 +43,7 @@ export const oneInformation = async ctx => {
     
     let weapon = await Weapon.findById(conditions)
     console.log('1111111111111',weapon)
-    await ctx.render('oneinformation', {
+    await ctx.render('page/oneinformation', {
         title: '详情页',
         weapon: weapon
     })

@@ -18,8 +18,11 @@
     "koa-static": "^4.0.2",
     "koa-views": "^6.1.4",
     "lorem-ipsum": "^1.0.4",
+    "moment": "^2.22.2",
     "mongoose": "^5.1.0",
     "pug": "^2.0.3",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "slug": "^0.9.1",
     "truncate": "^2.0.1"
   }

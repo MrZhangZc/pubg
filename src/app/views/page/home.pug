@@ -1,0 +1,26 @@
+extends ../layout
+block css
+  link(rel="stylesheet", href="/css/home.css")
+block content
+  .content
+    .content_nav
+      a(href="/exploits") 战绩查询
+      a(href="/equip") 武器装备
+      a(href="/gamenews") 游戏新闻
+      a(href="/persion") 个人中心
+    .content_main
+      .content_left
+        .sidle_container
+          .sidle_list
+            img(src="/images/1.jpg", alt="")
+            img(src="/images/2.jpg", alt="")
+            img(src="/images/3.jpg", alt="")
+      .content_right
+        h1 游戏攻略
+        each weapon in weapons
+          .content_right_main
+            a(href='/information/' + weapon._id, target="_black") #{truncate(weapon.name,30)}
+            p #{moment(weapon.meta.createdAt).format('YYYY-MM-DD')}
+        p.more
+          a(href='/information') 更多资讯》》
+    //- script(src="/js/slider.js")

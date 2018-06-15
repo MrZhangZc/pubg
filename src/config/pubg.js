@@ -1,0 +1,3 @@
+export default {
+    apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjNjUzYWE5MC01MjY5LTAxMzYtNWRjYS0yOTc3NGZjOGJjYmQiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTI5MDI2Mjk5LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6InB1YmdpbWF1In0.ZamjcqaRQA0ADD4_Oxi6foxkrhuwO1ShEDl7PAncgSA'
+}
