@@ -9,3 +9,7 @@ block content
       a(href="/gamenews") 游戏新闻
       a.active(href="/persion") 个人中心
     .content_persion
+      if user
+        p 名字是 #{user.name}
+      else
+        p 请先登录
