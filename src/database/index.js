@@ -6,6 +6,7 @@ require('../app/schema/resource')
 require('../app/schema/weapon')
 require('../app/schema/armor')
 require('../app/schema/consumable')
+require('../app/schema/user')
 
 export const database = () => {
     mongoose.set('debug', true)

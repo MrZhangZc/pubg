@@ -5,6 +5,7 @@ import loremIpsum from 'lorem-ipsum'
 
 require('../app/schema/resource')
 require('../app/schema/weapon')
+require('../app/schema/user')
 // require('../app/schema/armor')
 // require('../app/schema/consumable')
 

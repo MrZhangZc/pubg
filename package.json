@@ -11,6 +11,7 @@
     "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",

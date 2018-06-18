@@ -6,6 +6,10 @@ const Weapon = mongoose.model('Weapon')
 
 export const home = async ctx => {
     try {
+        console.log('user in session')
+        console.log(ctx.session.user)
+        let _user = ctx.session.user
+        ctx.state.user = _user
         ctx.state.moment = moment
         ctx.state.truncate = truncate
         let weapon = await Weapon.find()
@@ -58,21 +62,3 @@ export const persion = async ctx => {
     }
 }
 
-export const register = async ctx => {
-    try {
-        await ctx.render('page/register', {
-            // title: '注册'
-        })
-    } catch (err) {
-        console.log('注册出错', err)
-    }
-}
-export const login = async ctx => {
-    try {
-        await ctx.render('page/login', {
-            // title: '登录'
-        })
-    } catch (err) {
-        console.log('登录出错', err)
-    }
-}

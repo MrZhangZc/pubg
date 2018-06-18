@@ -16,6 +16,16 @@ database()
 const app = new Koa()
 
 app.use(bodyparser())
+app.keys = ['pubg']
+const CONFIG = {
+    key: 'koa:sess',
+    maxAge: 86400000,
+    overwrite: true,
+    httpOnly: true,
+    signed: true,
+    rolling: false
+}
+app.use(session(CONFIG, app))
 
 app.use(KoaStatic(r('../static')))
 app.use(KoaViews(r('./app/views'), {

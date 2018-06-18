@@ -15,6 +15,11 @@ html(lang="en")
             img.logo(src="/images/logo.png", alt="恰鸡盒")
             a(href="/") 主页
           .header_right
-            a(href="/login").login 登录&nbsp;&nbsp;&nbsp;&nbsp;
-            a(href="/register").register 注册&nbsp;&nbsp;&nbsp;
+            if user
+              a(style="display:inline;color:#90A9C9;") 欢迎您尊贵的, #{user.name}
+              span(style="display:inline;color:#90A9C9;") &nbsp;|&nbsp;
+              a.nvabar-link(href="/logout" style="display:inline;color:#90A9C9;") 登出
+            else
+              a(href="/login").login 登录&nbsp;&nbsp;&nbsp;&nbsp;
+              a(href="/register").register 注册&nbsp;&nbsp;&nbsp;
         block content
