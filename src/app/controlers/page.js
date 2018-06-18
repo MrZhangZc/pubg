@@ -54,6 +54,8 @@ export const gamenews = async ctx => {
 
 export const persion = async ctx => {
     try {
+        let _user = ctx.session.user
+        ctx.state.user = _user
         await ctx.render('page/persion', {
             title: '个人中心'
         })
