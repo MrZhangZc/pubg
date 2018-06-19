@@ -10,13 +10,13 @@ html(lang="en")
     body
       .register
         h1 注册
-        //- form.form(method="post", action="admin/user/register" style="margin-top:20%;")
-        //-   label(for="signupName") 用户名
-        //-   input#signupName.input-sing(name="user[name]", type="text")
-        //-   label(for="signupPassword") 密码&nbsp;&nbsp;&nbsp;
-        //-   input#signupPassword.input-sing(name="user[password]", type="password")
-        //-   input(type="file" name="thumbnail" accept="images/*")
-        //-   button.btn.btn-success.btn-signin(type="submit") 注册
-        form(method="post", action="uploadimg", enctype="multipart/form-data")
-          input(type="file" name="file") 
-          input(type="submit" value="ok") 
+        form.form(method="post", action="admin/user/register" style="margin-top:20%;")
+          label(for="signupName") 用户名
+          input#signupName.input-sing(name="user[name]", type="text")
+          label(for="signupPassword") 密码&nbsp;&nbsp;&nbsp;
+          input#signupPassword.input-sing(name="user[password]", type="password")
+          input(type="file" name="thumbnail" accept="images/*")
+          button.btn.btn-success.btn-signin(type="submit") 注册
+        //- form(method="post", action="uploadimg", enctype="multipart/form-data")
+        //-   input(type="file" name="file") 
+        //-   input(type="submit" value="ok") 

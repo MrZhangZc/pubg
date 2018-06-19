@@ -102,17 +102,17 @@ export const pubgapi = async ctx => {
         const nikename = ctx.request.body.nikename
         console.log(nikename)
         let userapi = new pApi()
-        let _puser = await userapi.getPlayersInfo(nikename)
-        const player = _puser.data[0].attributes
-        const playerd = _puser.data[0].relationships
-        const playerId = _puser.data[0].id
+        let nicknameplayer = await userapi.getPlayersInfo(nikename)
+        // const player = nicknameplayer.data[0].attributes
+        // const playerd = nicknameplayer.data[0].relationships
+        const playerId = nicknameplayer.data[0].id
         console.log(playerId)
         let idplayer = await userapi.getPlayerbyId(playerId)
-        console.log('idplayer', idplayer)
-        let sesion = await userapi.getCurrentSeason()
-        console.log('现在的赛季是', sesion)
+        // console.log('idplayer', idplayer)
+        // let sesion = await userapi.getCurrentSeason()
+        // console.log('现在的赛季是', sesion)
         let pstate = await userapi.getPlayerStats(playerId)
-        const tplayer = pstate.data.attributes.gameModeStats
+        const player = pstate.data.attributes.gameModeStats
         console.log('玩家状态是', pstate)
         console.log('玩家属性', pstate.data.attributes.gameModeStats)
         console.log('玩家关系', pstate.data.relationships.matchesDuo)
@@ -123,12 +123,10 @@ export const pubgapi = async ctx => {
         
         // console.log('属性', player)
         // console.log('关系', playerd)
-        // console.log('数据', _puser)
+        // console.log('数据', nicknameplayer)
         await ctx.render('page/exploits', {
             idplayer: idplayer,
-            puser: player,
-            playerd: playerd,
-            tplayer: tplayer
+            player: player,
         })
         
     }catch(err){
