@@ -1,15 +1,15 @@
 import mongoose from 'mongoose'
-import multer from 'koa-multer'
+//import multer from 'koa-multer'
 import pApi from '../../pbugapi/api'
 
 const User = mongoose.model('User')
-var storage = multer.diskStorage({
-    destination: 'images',
-})
+// var storage = multer.diskStorage({
+//     destination: 'images',
+// })
 
-var upload = multer({
-    storage: storage,
-});
+// var upload = multer({
+//     storage: storage,
+// });
 
 export const register = async ctx => {
     try {
