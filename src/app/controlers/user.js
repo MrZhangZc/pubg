@@ -125,6 +125,7 @@ export const pubgapi = async ctx => {
         // console.log('关系', playerd)
         // console.log('数据', nicknameplayer)
         await ctx.render('page/exploits', {
+            title: '战绩查询',
             idplayer: idplayer,
             player: player,
         })
