@@ -1,6 +1,6 @@
 import Router from 'koa-router'
-import { getinformation, oneInformation } from '../app/controlers/information'
-// import { houtai, deletes } from '../app/controlers/admin'
+import { posts, post} from '../app/controlers/post'
+import { adminindex, addpost, postadd, deletes, edit } from '../app/controlers/admin'
 import { home, exploits, equip, gamenews, persion} from '../app/controlers/page'
 import { register, login, userinfo, userlogin, logout, uploadimg, pubgapi } from '../app/controlers/user'
 
@@ -25,11 +25,19 @@ export const router = app => {
     //pubg
     router.post('/exploits', pubgapi)
     
+    //post
+    router.get('/posts', posts)
+    router.get('/post/:id', post)
 
-    router.get('/information', getinformation)
-    router.get('/information/:id', oneInformation)
-    // router.get('/admin/post', houtai)
-    // router.get('/admin/post/delete:id', deletes)
+    //admin
+    router.get('/admin/post', adminindex)
+    router.get('/admin/post/add', addpost)
+    router.post('/admin/post/addpost', postadd)
+    router.get('/admin/post/delete:id', deletes)
+    router.get('/admin/post/edit:id', edit)
+
+    //admin
+    //router.get('/admin', adminindex)
 
     app.use(router.routes())
     app.use(router.allowedMethods())

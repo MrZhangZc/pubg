@@ -1,0 +1,30 @@
+extends ../adminlayout
+block admincss
+  link(rel="stylesheet", href="/css/list.css")
+block admincontent
+  table
+    thead
+      tr
+        th 标题
+        th 时间
+        th 管理
+    tbody
+    each post in posts
+      tr
+        td #{truncate(post.title,30)}
+        td #{moment(post.meta.createdAt).format('YYYY-MM-DD')}
+        td
+          a(href="/post/" + post._id, targrt='_blank') 查看
+          a(href="/admin/post/edit" + post._id, targrt='_blank') 编辑
+          a(href="/admin/post/delete" + post._id, targrt='_blank') 删除
+  if pageCount > 1
+      nav.paeg
+          ul
+            - var currentPage = 1
+            while currentPage < pageCount
+              if(currentPage === pageNum)
+                li.anniu
+                  a.active(href="/admin/post?page=" + currentPage + '&sortby=' + sortby + '&sortdir=' + sortdir)= currentPage++
+              else
+                li.anniu
+                  a(href="/admin/post?page=" + currentPage + '&sortby=' + sortby + '&sortdir=' + sortdir)= currentPage++

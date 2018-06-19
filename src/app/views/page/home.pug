@@ -17,10 +17,10 @@ block content
             img(src="/images/3.jpg", alt="")
       .content_right
         h1 游戏攻略
-        each weapon in weapons
+        each post in posts
           .content_right_main
-            a(href='/information/' + weapon._id, target="_black") #{truncate(weapon.name,30)}
-            p #{moment(weapon.meta.createdAt).format('YYYY-MM-DD')}
+            a(href='/post/' + post._id, target="_black") #{truncate(post.title,30)}
+            p #{moment(post.meta.createdAt).format('YYYY-MM-DD')}
         p.more
-          a(href='/information') 更多资讯》》
+          a(href='/posts') 更多资讯》》
     //- script(src="/js/slider.js")

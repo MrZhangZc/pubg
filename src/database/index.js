@@ -2,10 +2,8 @@
 import mongoose from 'mongoose'
 import config from '../config'
 
-require('../app/schema/resource')
+require('../app/schema/post')
 require('../app/schema/weapon')
-require('../app/schema/armor')
-require('../app/schema/consumable')
 require('../app/schema/user')
 
 export const database = () => {

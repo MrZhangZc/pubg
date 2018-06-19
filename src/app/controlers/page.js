@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import truncate from 'truncate'
 import moment from 'moment'
 
-const Weapon = mongoose.model('Weapon')
+const Post = mongoose.model('Post')
 
 export const home = async ctx => {
     try {
@@ -12,10 +12,10 @@ export const home = async ctx => {
         ctx.state.user = _user
         ctx.state.moment = moment
         ctx.state.truncate = truncate
-        let weapon = await Weapon.find()
+        let post = await Post.find()
         await ctx.render('page/home', {
             title: '恰鸡盒',
-            weapons: weapon.slice(0,13)
+            posts: post.slice(0,13)
         })
     }catch(err){
         console.log('首页资讯列表出错', err)

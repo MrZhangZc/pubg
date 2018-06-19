@@ -1,0 +1,37 @@
+table {
+    width: 70%;
+    border: 1px solid #ccc;
+    margin: 2em auto;
+}
+
+tbody {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+th,
+tr,
+td {
+    text-align: center;
+    border: 1px solid #ccc;
+    height: 2em;
+    background-color: #CFF;
+}
+
+.del {
+    background-color: red;
+    width: 3em;
+}
+.paeg ul{
+    display: flex;
+}
+
+.paeg .anniu a{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 3em;
+}

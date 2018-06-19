@@ -3,13 +3,9 @@ import mongoose from 'mongoose'
 import config from '../config'
 import loremIpsum from 'lorem-ipsum'
 
-require('../app/schema/resource')
-require('../app/schema/weapon')
-require('../app/schema/user')
-// require('../app/schema/armor')
-// require('../app/schema/consumable')
-
-require('../app/controlers/information')
+// require('../app/schema/user')
+require('../app/schema/post')
+//require('../app/controlers/information')
 
 export const database = () => {
     mongoose.set('debug', true)
@@ -31,21 +27,35 @@ export const database = () => {
 
 database()
 
-const Resource = mongoose.model('Resource')
-const Weapon = mongoose.model('Weapon')
+//const Resource = mongoose.model('Resource')
+const Post = mongoose.model('Post')
 // const Armor = mongoose.model('Armor')
 // const Consumable = mongoose.model('Consumable')
 
-async function savaData () {
-    const resource = await Resource.find()
+// async function savaData () {
+//     const resource = await Resource.find()
 
-    for(let i = 0;i < 35; i++){
-        let weapon = new Weapon({
-            name: loremIpsum({ count: 1, units: 'sentences'  }),
-            bullet: loremIpsum({ count: 20, units: 'sentences' })
+//     for(let i = 0;i < 35; i++){
+//         let weapon = new Weapon({
+//             name: loremIpsum({ count: 1, units: 'sentences'  }),
+//             bullet: loremIpsum({ count: 20, units: 'sentences' })
+//         })
+
+//         await weapon.save()
+//     }
+
+// }
+
+// savaData()
+
+async function savaData() {
+    for (let i = 0; i < 35; i++) {
+        let post = new Post({
+            title: loremIpsum({ count: 1, units: 'sentences' }),
+            content: loremIpsum({ count: 20, units: 'sentences' })
         })
 
-        await weapon.save()
+        await post.save()
     }
 
 }
