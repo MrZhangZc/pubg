@@ -23,6 +23,10 @@ export default class pApi {
             console.error(error)
         }
     }
+    async getCurrentSeason(region) {
+        const url = `${this.api_endpoint}/shards/pc-as/seasons`
+        return this.request({ url: url })
+    }
 
     async getPlayersInfo(nickname) {
         const url = `${this.api_endpoint}/shards/pc-as/players?filter[playerNames]=${nickname}`
@@ -31,6 +35,11 @@ export default class pApi {
 
     async getPlayerbyId(id){
         const url = `${this.api_endpoint}/shards/pc-as/players/${id}`
+        return this.request({ url: url })
+    }
+
+    async getPlayerStats(id){
+        const url = `${this.api_endpoint}/shards/pc-as/players/${id}/seasons/${seasonId}`
         return this.request({ url: url })
     }
 }

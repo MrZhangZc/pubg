@@ -109,6 +109,8 @@ export const pubgapi = async ctx => {
         console.log(playerId)
         let idplayer = await userapi.getPlayerbyId(playerId)
         console.log('idplayer', idplayer)
+        let sesion = await userapi.getCurrentSeason()
+        console.log('现在的赛季是', sesion)
         // console.log('属性', player)
         // console.log('关系', playerd)
         // console.log('数据', _puser)
