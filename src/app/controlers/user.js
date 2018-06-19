@@ -113,6 +113,13 @@ export const pubgapi = async ctx => {
         console.log('现在的赛季是', sesion)
         let pstate = await userapi.getPlayerStats(playerId)
         console.log('玩家状态是', pstate)
+        console.log('玩家属性', pstate.data.attributes.gameModeStats)
+        console.log('玩家关系', pstate.data.relationships.matchesDuo)
+        console.log('玩家关系2', pstate.data.relationships.matchesDuoFPP)
+        console.log('玩家关系赛季', pstate.data.relationships.season)
+        console.log('玩家关系玩家', pstate.data.relationships.player)
+        console.log('玩家关系单排', pstate.data.relationships.matchesSolo)
+        
         // console.log('属性', player)
         // console.log('关系', playerd)
         // console.log('数据', _puser)
