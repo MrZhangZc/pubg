@@ -39,7 +39,7 @@ export default class pApi {
     }
 
     async getPlayerStats(id){
-        const url = `${this.api_endpoint}/shards/pc-as/players/${id}/seasons/${seasonId}`
+        const url = `${this.api_endpoint}/shards/pc-as/players/${id}/seasons/division.bro.official.2018-06`
         return this.request({ url: url })
     }
 }
