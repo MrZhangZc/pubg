@@ -103,9 +103,9 @@ export const pubgapi = async ctx => {
         console.log(nikename)
         let userapi = new pApi()
         let _puser = await userapi.getPlayersInfo(nikename)
-        console.log(_puser)
+        const player = _puser.data[0].type
         await ctx.render('page/exploits', {
-            puser: _puser
+            puser: player
         })
         
     }catch(err){
