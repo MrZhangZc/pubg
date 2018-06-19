@@ -3,24 +3,29 @@ import api from '../config/pubg'
 
 const pubgkey = api.apiKey
 
-export default class pubgApi {
+export default class pApi {
     constructor() {
         this.api_endpoint = "https://api.playbattlegrounds.com";
         this.api_key = pubgkey;
     }
 
-    api_call(url) {
-        return new Promise((resolve, reject) => {
-            const request = new XMLHttpRequest();
-            request.open("GET", url, true);
-            request.setRequestHeader("Accept", "application/vnd.api+json");
-            if (this.api_key) request.setRequestHeader("Authorization", `Bearer ${this.api_key}`);
-            request.onload = () => resolve(JSON.parse(request.response));
-            request.send();
-        });
+    async request(options) {
+        options = Object.assign({}, options, { json: true }, {
+            headers: {
+                "Accept": "application/vnd.api+json",
+                "Authorization": `Bearer ${this.api_key}`
+            }})
+
+        try {
+            const response = await request(options)
+            return response
+        } catch (error) {
+            console.error(error)
+        }
     }
 
-    async getPlayersInfo(nicknames) {
-        return this.api_call(`${this.api_endpoint}/shards/pc-as/players/${nicknames}`).then(res => res);
+    async getPlayersInfo(nickname) {
+        const url = `${this.api_endpoint}/shards/pc-as/players?filter[playerNames]=${nickname}`
+        return this.request({ url: url })
     }
 }

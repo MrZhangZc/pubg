@@ -1,7 +1,8 @@
 import Koa from 'koa'
 import KoaViews from 'koa-views'
 import KoaStatic from 'koa-static'
-import bodyparser from 'koa-bodyparser'
+//import bodyparser from 'koa-bodyparser'
+import koabody from 'koa-body'
 import session from 'koa-session'
 import { join } from 'path'
 import { database } from './database'
@@ -15,7 +16,13 @@ database()
 
 const app = new Koa()
 
-app.use(bodyparser())
+//app.use(bodyparser())
+app.use(koabody({
+    multipart: true,
+    formidable: {
+        maxFileSize: 200 * 1024 * 1024 // 设置上传文件大小最大限制，默认2M
+    }
+}))
 app.keys = ['pubg']
 const CONFIG = {
     key: 'koa:sess',

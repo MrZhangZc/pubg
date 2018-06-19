@@ -4,3 +4,10 @@
     background-color: rgba(255, 255, 255,0.3);
     margin: 0 auto;
 }
+
+.plogin{
+    text-align: center;
+    display: inline-block;
+    margin: 30px auto;
+    color: #000;
+}

@@ -1,7 +1,15 @@
 import mongoose from 'mongoose'
-
+import multer from 'koa-multer'
+import pApi from '../../pbugapi/api'
 
 const User = mongoose.model('User')
+var storage = multer.diskStorage({
+    destination: 'images',
+})
+
+var upload = multer({
+    storage: storage,
+});
 
 export const register = async ctx => {
     try {
@@ -72,9 +80,35 @@ export const userlogin = async ctx => {
     }
 }
 
-exports.logout = async ctx => {
+export const logout = async ctx => {
     delete ctx.session.user
     delete ctx.state.user
 
     ctx.response.redirect('/')
 }
+
+export const uploadimg = async ctx => {
+    // const file = ctx.request.body
+    // console.log(file)
+    upload.single('file')
+    ctx.body = {
+        filename: ctx.req.file//返回文件名  
+    }
+    console.log('weqweqwe', ctx.req.file)
+    ctx.response.redirect('/')
+}
+export const pubgapi = async ctx => {
+    try{
+        const nikename = ctx.request.body.nikename
+        console.log(nikename)
+        let userapi = new pApi()
+        let _puser = await userapi.getPlayersInfo(nikename)
+        console.log(_puser)
+        // ctx.state.puser = _puser.data[0]
+        ctx.response.redirect('/exploits')
+    }catch(err){
+        console.log('查询出错',err)
+    }
+}
+
+
