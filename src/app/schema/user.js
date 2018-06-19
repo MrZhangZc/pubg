@@ -9,7 +9,10 @@ const UserSchema = new Schema({
     sid: String,
     headimg: Array,
     rank: Object,
-    role: String,
+    role: {
+        type:String,
+        default: '普通用户'
+    },
     meta: {
         createdAt: {
             type: Date,

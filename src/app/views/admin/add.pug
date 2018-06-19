@@ -3,7 +3,7 @@ block admincss
   link(rel="stylesheet", href="/css/add.css")
 block admincontent
   h2.page.header 添加文章
-  form.vertical-form(method="post", action='addpost')
+  form.vertical-form(method="post", action=action)
     label(for="title") 标题
     input.form-control.input-lg(name="title", required='true',placeholder="请输入标题。。。", value=post.title)
     label(for="content") 内容

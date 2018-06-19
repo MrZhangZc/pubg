@@ -1,0 +1,20 @@
+extends ../adminlayout
+block admincss
+  link(rel="stylesheet", href="/css/list.css")
+block admincontent
+  table
+    thead
+      tr
+        th 姓名
+        th 角色
+        th 建立时间
+        th 管理
+    tbody
+    each user in users
+      tr
+        td #{user.name}
+        td #{user.role}
+        td #{moment(user.meta.createdAt).format('YYYY-MM-DD')}
+        td
+          a(href="/admin/user/up/" + user._id) 升级为管理员 &nbsp;&nbsp;&nbsp;
+          a(href="/admin/user/down/" + user._id) 变为普通用户

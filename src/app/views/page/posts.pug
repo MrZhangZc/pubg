@@ -14,7 +14,7 @@ html(lang="en")
                     .con
                         .name
                             a(href='/post/' + post._id, target="_black") #{truncate(post.title,20)}
-                        .bullet #{truncate(post.content,300)}
+                        .bullet!= truncate(post.content,300)
                 if pageCount > 1
                     nav.paeg
                         ul

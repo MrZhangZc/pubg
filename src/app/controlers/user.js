@@ -10,7 +10,6 @@ const User = mongoose.model('User')
 // var upload = multer({
 //     storage: storage,
 // });
-
 export const register = async ctx => {
     try {
         await ctx.render('page/register', {
@@ -132,6 +131,24 @@ export const pubgapi = async ctx => {
         
     }catch(err){
         console.log('查询出错',err)
+    }
+}
+
+export const signinRequired = async (ctx, next) => {
+    let user = ctx.session.user
+    if(user){
+        await next()
+    }else{
+        ctx.redirect('/')
+    }
+}
+
+export const adminRequired = async (ctx,next) => {
+    let user = ctx.session.user
+    if(user.role === '管理员'){
+        await next()
+    }else{
+        ctx.redirect('/')
     }
 }
 

@@ -16,9 +16,16 @@ html(lang="en")
             a(href="/") 主页
           .header_right
             if user
-              a(style="display:inline;color:#90A9C9;") 欢迎您尊贵的, #{user.name}
-              span(style="display:inline;color:#90A9C9;") &nbsp;|&nbsp;
-              a.nvabar-link(href="/logout" style="display:inline;color:#90A9C9;") 登出
+              if user.role == '普通用户'
+                a(style="display:inline;color:#90A9C9;") 欢迎您尊贵的, #{user.name}
+                span(style="display:inline;color:#90A9C9;") &nbsp;|&nbsp;
+                a.nvabar-link(href="/logout" style="display:inline;color:#90A9C9;") 登出
+              else if user.role == '管理员'
+                a(style="display:inline;color:#90A9C9;") 欢迎您管理员, #{user.name}
+                span(style="display:inline;color:#90A9C9;") &nbsp;|&nbsp;
+                a.nvabar-link(href="/logout" style="display:inline;color:#90A9C9;") 登出
+                span &nbsp;|&nbsp;
+                a.nvabar-link(href="/admin/post" style="display:inline;color:red;") 进入后台管理系统
             else
               a(href="/login").login 登录&nbsp;&nbsp;&nbsp;&nbsp;
               a(href="/register").register 注册&nbsp;&nbsp;&nbsp;
