@@ -104,8 +104,10 @@ export const pubgapi = async ctx => {
         let userapi = new pApi()
         let _puser = await userapi.getPlayersInfo(nikename)
         console.log(_puser)
-        // ctx.state.puser = _puser.data[0]
-        ctx.response.redirect('/exploits')
+        await ctx.render('page/exploits', {
+            puser: _puser
+        })
+        
     }catch(err){
         console.log('查询出错',err)
     }

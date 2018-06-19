@@ -23,7 +23,7 @@ export const router = app => {
     router.post('/uploadimg', uploadimg)
 
     //pubg
-    router.post('/admin/pubg/api', pubgapi)
+    router.post('/exploits', pubgapi)
     
 
     router.get('/information', getinformation)
