@@ -112,6 +112,7 @@ export const pubgapi = async ctx => {
         let sesion = await userapi.getCurrentSeason()
         console.log('现在的赛季是', sesion)
         let pstate = await userapi.getPlayerStats(playerId)
+        const tplayer = pstate.data.attributes.gameModeStats
         console.log('玩家状态是', pstate)
         console.log('玩家属性', pstate.data.attributes.gameModeStats)
         console.log('玩家关系', pstate.data.relationships.matchesDuo)
@@ -125,7 +126,8 @@ export const pubgapi = async ctx => {
         // console.log('数据', _puser)
         await ctx.render('page/exploits', {
             puser: player,
-            playerd: playerd
+            playerd: playerd,
+            tplayer: tplayer
         })
         
     }catch(err){
