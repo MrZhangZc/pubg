@@ -28,4 +28,9 @@ export default class pApi {
         const url = `${this.api_endpoint}/shards/pc-as/players?filter[playerNames]=${nickname}`
         return this.request({ url: url })
     }
+
+    async getPlayerbyId(id){
+        const url = `${this.api_endpoint}/shards/pc-as/players/${id}`
+        return this.request({ url: url })
+    }
 }
