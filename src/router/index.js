@@ -30,14 +30,14 @@ export const router = app => {
     router.get('/post/:id', post)
 
     //admin
-    router.get('/admin/post', adminindex)
-    router.get('/admin/post/add', addpost)
-    router.post('/admin/post/addpost', postadd)
-    router.get('/admin/post/delete/:id', deletes)
-    router.get('/admin/post/edit/:id', edit)
-    router.get('/admin/userlist', userlist)
-    router.get('/admin/user/up/:id', userup)
-    router.get('/admin/user/down/:id', userdown)
+    router.get('/admin/post', signinRequired, adminRequired, adminindex)
+    router.get('/admin/post/add', signinRequired, adminRequired, addpost)
+    router.post('/admin/post/addpost', signinRequired, adminRequired, postadd)
+    router.get('/admin/post/delete/:id', signinRequired, adminRequired, deletes)
+    router.get('/admin/post/edit/:id', signinRequired, adminRequired, edit)
+    router.get('/admin/userlist', signinRequired, adminRequired, userlist)
+    router.get('/admin/user/up/:id', signinRequired, adminRequired, userup)
+    router.get('/admin/user/down/:id', signinRequired, adminRequired, userdown)
 
     //admin
     //router.get('/admin', adminindex)
