@@ -140,12 +140,19 @@ export const pubgapip = async ctx => {
         const idplayer = await userapi.getPlayerbyId(playerId)
         const pstate = await userapi.getPlayerStats(playerId)
         const player = pstate.data.attributes.gameModeStats
-        const gamename = idplayer.data.attributes.name
 
+        const gamename = idplayer.data.attributes.name
         const kills = player.solo.kills + player.duo.kills + player.squad.kills
         const updates = { $set: { gamename: gamename } }
+        const updates2 = { $set: { rank: kills } }
         let newsuer = await User.update({ name: _user.name }, updates)
-        console.log('22222222222222',newsuer, kills)
+
+        let uesr = await User.findOne({ name: _user.name })
+        let title
+        if(user.kills > 10){
+            title = '普通玩家'
+        }
+        console.log(title)
         await ctx.render('page/persion', {
             title: '战绩查询',
             idplayer: idplayer,

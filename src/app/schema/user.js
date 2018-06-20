@@ -15,6 +15,10 @@ const UserSchema = new Schema({
         type: Number,
         default: 0
     },
+    tiele: {
+        type: String,
+        default: '普通玩家'
+    },
     role: {
         type:String,
         default: '普通用户'
