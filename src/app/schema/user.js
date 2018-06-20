@@ -15,7 +15,7 @@ const UserSchema = new Schema({
         type: Number,
         default: 0
     },
-    tiele: {
+    title: {
         type: String,
         default: '普通玩家'
     },

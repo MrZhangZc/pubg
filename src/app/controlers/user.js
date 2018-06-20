@@ -145,12 +145,14 @@ export const pubgapip = async ctx => {
         const kills = player.solo.kills + player.duo.kills + player.squad.kills
         const updates = { $set: { gamename: gamename } }
         const updates2 = { $set: { rank: kills } }
-        let newsuer = await User.update({ name: _user.name }, updates)
+        await User.update({ name: _user.name }, updates)
+        await User.update({ name: _user.name }, updates2)
 
         let user = await User.findOne({ name: _user.name })
         let title
         if(user.kills > 10){
             title = '普通玩家'
+            return title
         }
         console.log('2222222222222',title)
         await ctx.render('page/persion', {
