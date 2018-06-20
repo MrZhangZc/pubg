@@ -6,9 +6,15 @@ const Schema = mongoose.Schema
 const UserSchema = new Schema({
     name: String,
     password: String,
-    sid: String,
+    gamename: {
+        type: String,
+        default: '未填写'
+    },
     headimg: Array,
-    rank: Object,
+    rank: {
+        type: Number,
+        default: 0
+    },
     role: {
         type:String,
         default: '普通用户'

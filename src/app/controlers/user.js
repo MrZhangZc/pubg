@@ -91,6 +91,8 @@ export const uploadimg = async ctx => {
 }
 export const pubgapi = async ctx => {
     try{
+        let _user = ctx.session.user
+        ctx.state.user = _user
         const nikename = ctx.request.body.nikename
         console.log(nikename)
         let userapi = new pApi()
@@ -124,6 +126,34 @@ export const pubgapi = async ctx => {
         
     }catch(err){
         console.log('查询出错',err)
+    }
+}
+
+export const pubgapip = async ctx => {
+    try {
+        let _user = ctx.session.user
+        ctx.state.user = _user
+        const nikename = ctx.request.body.nikename
+        const userapi = new pApi()
+        const nicknameplayer = await userapi.getPlayersInfo(nikename)
+        const playerId = nicknameplayer.data[0].id
+        const idplayer = await userapi.getPlayerbyId(playerId)
+        const pstate = await userapi.getPlayerStats(playerId)
+        const player = pstate.data.attributes.gameModeStats
+        const gamename = idplayer.data.attributes.name
+
+        const kills = player.solo.kills + player.duo.kills + player.squad.kills
+        const updates = { $set: [{ gamename: gamename }, { rank: kills}] }
+        let newsuer = await User.update({ name: _user.name }, updates)
+        console.log('22222222222222',newsuer)
+        await ctx.render('page/persion', {
+            title: '战绩查询',
+            idplayer: idplayer,
+            player: player,
+        })
+
+    } catch (err) {
+        console.log('查询出错', err)
     }
 }
 

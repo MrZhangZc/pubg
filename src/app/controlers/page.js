@@ -24,6 +24,8 @@ export const home = async ctx => {
 
 export const exploits = async ctx => {
     try{
+        let _user = ctx.session.user
+        ctx.state.user = _user
         await ctx.render('page/exploits',{
             title:'战绩查询'
         })
@@ -34,6 +36,8 @@ export const exploits = async ctx => {
 
 export const equip = async ctx => {
     try {
+        let _user = ctx.session.user
+        ctx.state.user = _user
         await ctx.render('page/equip', {
             title: '武器装备'
         })
@@ -42,13 +46,15 @@ export const equip = async ctx => {
     }
 }
 
-export const gamenews = async ctx => {
+export const forum = async ctx => {
     try {
-        await ctx.render('page/gamenews', {
-            title: '游戏新闻'
+        let _user = ctx.session.user
+        ctx.state.user = _user
+        await ctx.render('page/forum', {
+            title: '游戏论坛'
         })
     } catch (err) {
-        console.log('游戏新闻出错', err)
+        console.log('游戏论坛出错', err)
     }
 }
 

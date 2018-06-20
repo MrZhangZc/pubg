@@ -5,17 +5,6 @@ import truncate from 'truncate'
 const Post = mongoose.model('Post')
 const User = mongoose.model('User')
 
-// export const adminindex = async ctx =>{
-//     try{
-        
-//         await ctx.render('admin/admin', {
-//             title: '后台'
-//         })
-//     }catch(err){
-//         console.log('后台出错',err)
-//     }
-// }
-
 export const adminindex = async ctx => {
     try {
         ctx.state.moment = moment
@@ -56,7 +45,6 @@ export const userlist = async ctx => {
     try {
         ctx.state.moment = moment
         let users = await User.find()
-        console.log(users)
         await ctx.render('admin/userlist', {
             title: '用户列表',
             users: users
@@ -69,7 +57,6 @@ export const userlist = async ctx => {
 export const postadd = async ctx => {
     try {
         const opts = ctx.request.body
-        console.log('opts')
         let post = new Post(opts)
         let savepost = await post.save()
         console.log('文章成功保存', savepost)
@@ -93,7 +80,6 @@ export const edit = async ctx => {
 }
 
 export const deletes = async ctx => {
-    console.log(ctx.params.id)
     await Post.remove({ _id: ctx.params.id})
     console.log('成功删除')
     ctx.response.redirect('/admin/post')
