@@ -11,13 +11,15 @@ block content
     .content_persion
       if user
         p 名字是 #{user.name}
-        form.form(method="post", action="persion")
-          .content_input
-            lable.lable(for="inputName") 输入你的游戏昵称
-            input#nickname(type="text", name="nikename")
-            button.btn(type="submit") 查询
         if idplayer
           p #{idplayer.data.attributes.name}
+          p #{auser.title}
+        else
+          form.form(method="post", action="persion")
+            .content_input
+              lable.lable(for="inputName") 输入你的游戏昵称
+              input#nickname(type="text", name="nikename")
+              button.btn(type="submit") 查询
       else
         .plogin
           a.plogin(href="/login") 请先登录

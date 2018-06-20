@@ -148,17 +148,12 @@ export const pubgapip = async ctx => {
         await User.update({ name: _user.name }, updates)
         await User.update({ name: _user.name }, updates2)
 
-        let user = await User.findOne({ name: _user.name })
-        if(user.kills > 100){
-            let title = '传奇'
-            const updates3 = { $set: { title: title } }
-            await User.update({ name: _user.name }, updates3)
-        }
-        console.log('2222222222222',title)
+        let auser = await User.findOne({ name: _user.name })
         await ctx.render('page/persion', {
             title: '战绩查询',
             idplayer: idplayer,
             player: player,
+            auser: auser
         })
 
     } catch (err) {
