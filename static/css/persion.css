@@ -1,8 +1,9 @@
 .content_persion {
     width: 80%;
     height: 400px;
-    background-color: rgba(255, 255, 255,0.3);
+    background-color: rgba(255, 255, 255,0.5);
     margin: 0 auto;
+    padding-top: 2rem;
 }
 
 .plogin{
@@ -10,4 +11,19 @@
     display: inline-block;
     margin: 30px auto;
     color: #000;
+}
+.content_persion .info {
+    font-size: 2rem;
+    color: #633C2F;
+    margin-left: 2rem;
+}
+.userinfo{
+    margin: 3rem auto;
+    width: 60%;
+}
+.lable{
+    line-height: 3rem;
+}
+#nickname{
+    margin-right: 2rem
 }

@@ -153,7 +153,8 @@ export const pubgapip = async ctx => {
             title: '战绩查询',
             idplayer: idplayer,
             player: player,
-            auser: auser
+            auser: auser,
+            kills: kills
         })
 
     } catch (err) {
