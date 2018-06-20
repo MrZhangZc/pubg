@@ -8,6 +8,8 @@ block admincontent
         th 姓名
         th 角色
         th 建立时间
+        th 游戏昵称
+        th 游戏击杀数
         th 管理
     tbody
     each user in users
@@ -15,6 +17,8 @@ block admincontent
         td #{user.name}
         td #{user.role}
         td #{moment(user.meta.createdAt).format('YYYY-MM-DD')}
+        td #{user.gamename}
+        td #{user.rank}
         td
           a(href="/admin/user/up/" + user._id) 升级为管理员 &nbsp;&nbsp;&nbsp;
           a(href="/admin/user/down/" + user._id) 变为普通用户
