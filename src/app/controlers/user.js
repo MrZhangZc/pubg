@@ -147,12 +147,12 @@ export const pubgapip = async ctx => {
         const updates2 = { $set: { rank: kills } }
         let newsuer = await User.update({ name: _user.name }, updates)
 
-        let uesr = await User.findOne({ name: _user.name })
+        let user = await User.findOne({ name: _user.name })
         let title
         if(user.kills > 10){
             title = '普通玩家'
         }
-        console.log(title)
+        console.log('2222222222222',title)
         await ctx.render('page/persion', {
             title: '战绩查询',
             idplayer: idplayer,
@@ -161,6 +161,7 @@ export const pubgapip = async ctx => {
 
     } catch (err) {
         console.log('查询出错', err)
+        ctx.response.redirect('/')
     }
 }
 
