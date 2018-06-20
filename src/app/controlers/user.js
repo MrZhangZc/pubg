@@ -143,9 +143,9 @@ export const pubgapip = async ctx => {
         const gamename = idplayer.data.attributes.name
 
         const kills = player.solo.kills + player.duo.kills + player.squad.kills
-        const updates = { $set: [{ gamename: gamename }, { rank: kills}] }
+        const updates = { $set: { gamename: gamename } }
         let newsuer = await User.update({ name: _user.name }, updates)
-        console.log('22222222222222',newsuer)
+        console.log('22222222222222',newsuer, kills)
         await ctx.render('page/persion', {
             title: '战绩查询',
             idplayer: idplayer,
