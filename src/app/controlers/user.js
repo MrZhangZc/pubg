@@ -134,6 +134,8 @@ export const pubgapip = async ctx => {
         let _user = ctx.session.user
         ctx.state.user = _user
         const nikename = ctx.request.body.nikename
+        const autograph = ctx.request.body.autograph
+        
         const userapi = new pApi()
         const nicknameplayer = await userapi.getPlayersInfo(nikename)
         const playerId = nicknameplayer.data[0].id
@@ -145,8 +147,10 @@ export const pubgapip = async ctx => {
         const kills = player.solo.kills + player.duo.kills + player.squad.kills
         const updates = { $set: { gamename: gamename } }
         const updates2 = { $set: { rank: kills } }
+        const updates3 = { $set: { autograph: autograph } }
         await User.update({ name: _user.name }, updates)
         await User.update({ name: _user.name }, updates2)
+        await User.update({ name: _user.name }, updates3)
 
         let auser = await User.findOne({ name: _user.name })
         await ctx.render('page/persion', {

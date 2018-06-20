@@ -20,11 +20,14 @@ block content
               p 传奇玩家
             else
               p 普通玩家
+            p 个性签名 #{auser.autograph}
           else
             form.form(method="post", action="persion")
               .content_input
                 lable.lable(for="inputName") 输入你的游戏昵称(只能填写一次不能修改)
                 input#nickname(type="text", name="nikename")
+                lable.lable(for="autograph") 个性签名
+                textarea#autograph(name="autograph") 每日一鸡美滋滋
                 button.btn(type="submit") 确认
       else
         .plogin

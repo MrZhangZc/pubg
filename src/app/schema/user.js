@@ -23,6 +23,10 @@ const UserSchema = new Schema({
         type:String,
         default: '普通用户'
     },
+    autograph: {
+        type: String,
+        default: '暂时还没有签名'
+    },
     meta: {
         createdAt: {
             type: Date,
