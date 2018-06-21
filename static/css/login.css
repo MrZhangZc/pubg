@@ -11,7 +11,5 @@ body {font: normal 100% Helvetica, Arial, sans-serif;background-image: url('/ima
 .btn-signin {background: #ccc;width: 5rem;height: 2rem;font-size: 1rem;opacity: 1;border: 1px solid #000;border-radius: 10px;cursor: pointer;}
 .register{float:left;display: block;width: 10rem;height: 2rem;background-color: #ccc;text-align: center;line-height: 2rem;border:1px solid #000;border-radius: 10px;cursor: pointer;color: #000;margin-right: 2rem;}
 .btn-signin:hover,
-.register:hover {
-    color: #000;
-    background-color: #6a6f77;
-}
+.register:hover {color: #000;background-color: #6a6f77;}
+label{font-size: 1.5rem}
