@@ -19,6 +19,10 @@ const UserSchema = new Schema({
         type: String,
         default: '普通玩家'
     },
+    sex: {
+        type: String,
+        default: '男'
+    },
     role: {
         type:String,
         default: '普通用户'

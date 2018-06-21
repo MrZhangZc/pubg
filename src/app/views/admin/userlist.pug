@@ -6,6 +6,7 @@ block admincontent
     thead
       tr
         th 姓名
+        th 性别
         th 角色
         th 建立时间
         th 游戏昵称
@@ -16,6 +17,7 @@ block admincontent
     each user in users
       tr
         td #{user.name}
+        td #{user.sex}
         td #{user.role}
         td #{moment(user.meta.createdAt).format('YYYY-MM-DD')}
         td #{user.gamename}

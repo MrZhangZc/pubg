@@ -60,7 +60,8 @@ export const userlogin = async ctx => {
                 ctx.session.user = {
                     _id: zzc._id,
                     name: zzc.name,
-                    role: zzc.role
+                    role: zzc.role,
+                    sex : zzc.sex
                 }
                 console.log('session中的用户', ctx.session)
                 ctx.response.redirect('/')
@@ -135,7 +136,8 @@ export const pubgapip = async ctx => {
         ctx.state.user = _user
         const nikename = ctx.request.body.nikename
         const autograph = ctx.request.body.autograph
-        
+        const sex = ctx.request.body.sex
+
         const userapi = new pApi()
         const nicknameplayer = await userapi.getPlayersInfo(nikename)
         const playerId = nicknameplayer.data[0].id
@@ -145,14 +147,18 @@ export const pubgapip = async ctx => {
 
         const gamename = idplayer.data.attributes.name
         const kills = player.solo.kills + player.duo.kills + player.squad.kills
+
         const updates = { $set: { gamename: gamename } }
         const updates2 = { $set: { rank: kills } }
         const updates3 = { $set: { autograph: autograph } }
+        const updates4 = { $set: { sex: sex } }
         await User.update({ name: _user.name }, updates)
         await User.update({ name: _user.name }, updates2)
         await User.update({ name: _user.name }, updates3)
+        await User.update({ name: _user.name }, updates4)
 
         let auser = await User.findOne({ name: _user.name })
+        console.log(auser)
         await ctx.render('page/persion', {
             title: '战绩查询',
             idplayer: idplayer,

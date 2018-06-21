@@ -10,25 +10,42 @@ block content
       a.active(href="/persion") 个人中心
     .content_persion
       if user
-        p.info 基本信息
-        .userinfo
-          p 你好 #{user.name}
-          if idplayer
-            p 游戏昵称：#{idplayer.data.attributes.name}
-            p 赛季杀敌数：#{kills}
-            if kills > 100
-              p 传奇玩家
-            else
-              p 普通玩家
-            p 个性签名 #{auser.autograph}
+        .imginfo
+          p.info 基本信息
+          if auser.sex === '男'
+            img(src="/images/boy.jpg", alt="", srcset="")
           else
+            img(src="/images/girl.jpg", alt="", srcset="")
+          p.info_hello 你好 #{auser.name}
+        .userinfo
+          if auser.autograph != '暂时还没有签名'
+            p.olduserinfo 游戏昵称：
+            p.serech #{auser.gamename}
+            p.olduserinfo 赛季杀敌数：
+            p.serech #{auser.rank}
+            //- if user.kills > 100
+            //-   p 传奇玩家
+            //- else
+            //-   p 普通玩家
+            p.olduserinfo 个性签名: 
+            p.serech #{auser.autograph}
+          else
+            p.onlyone 以下信息只能填写一次
             form.form(method="post", action="persion")
               .content_input
-                lable.lable(for="inputName") 输入你的游戏昵称(只能填写一次不能修改)
+                lable.gamenikename(for="inputName") 游戏昵称:
                 input#nickname(type="text", name="nikename")
-                lable.lable(for="autograph") 个性签名
+                br
+                label.usersex(for="category") 性别:
+                select.usersexsle(name="sex")
+                  option 男
+                  option 女
+                br
+                lable(for="autograph") 个性签名:
+                br
                 textarea#autograph(name="autograph") 每日一鸡美滋滋
-                button.btn(type="submit") 确认
+                br
+                button.userinfobtn(type="submit") 确认
       else
         .plogin
           a.plogin(href="/login") 请先登录

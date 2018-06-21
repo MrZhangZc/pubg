@@ -1,29 +1,90 @@
+input,
+textarea,
+{
+    display: block;
+}
 .content_persion {
     width: 80%;
     height: 400px;
-    background-color: rgba(255, 255, 255,0.5);
+    background-color: #F5F4F9;
     margin: 0 auto;
-    padding-top: 2rem;
+    display: flex;
+    /* justify-content: space-around; */
 }
-
+/* .content_persion p {
+    color: #000;
+} */
+.content_persion .info {
+    font-size: 1rem;
+    color: #633C2F;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.imginfo {
+    width: 25%;
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 1px #E4E4E6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content_persion img {
+    width: 5rem;
+    height: 6rem;
+    border-radius: 50%;
+}
 .plogin{
     text-align: center;
     display: inline-block;
     margin: 30px auto;
     color: #000;
 }
-.content_persion .info {
-    font-size: 2rem;
-    color: #633C2F;
+
+
+.userinfo{
+    width: 75%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 2rem;
     margin-left: 2rem;
 }
-.userinfo{
-    margin: 3rem auto;
-    width: 60%;
+
+.userinfo .onlyone{
+    color: #CF5208;
+    margin-bottom: 1rem;
 }
-.lable{
-    line-height: 3rem;
+.userinfo .gamenikename{
+    margin-right: 1rem;
 }
-#nickname{
-    margin-right: 2rem
+.userinfo #nickname{
+    border-radius: 5px;
+    border-color: #333;
+    margin-bottom: 1rem;
+}
+.userinfo .usersex{
+    margin-right: 3rem;
+}
+.userinfo .usersexsle{
+    border-radius: 5px;
+    border-color: #333;
+    margin-bottom: 1rem;
+}
+.userinfo #autograph{
+    border-radius: 5px;
+    border-color: #333;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.userinfo .userinfobtn{
+    width: 6rem;
+    height: 2rem;
+}
+.userinfo .olduserinfo{
+    font-size: 0.8rem;
+    margin-top: 2rem;
+}
+.userinfo .serech{
+    color: #CF5208;
 }

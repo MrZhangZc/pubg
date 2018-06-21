@@ -3,6 +3,7 @@ import truncate from 'truncate'
 import moment from 'moment'
 
 const Post = mongoose.model('Post')
+const User = mongoose.model('User')
 
 export const home = async ctx => {
     try {
@@ -62,11 +63,16 @@ export const persion = async ctx => {
     try {
         let _user = ctx.session.user
         ctx.state.user = _user
+        let auser = await User.findOne({name: _user.name})
         await ctx.render('page/persion', {
-            title: '个人中心'
+            title: '个人中心',
+            auser: auser
         })
     } catch (err) {
         console.log('个人中心出错', err)
+        await ctx.render('page/persion', {
+            title: '个人中心'
+        })
     }
 }
 
