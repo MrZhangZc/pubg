@@ -10,7 +10,9 @@ html(lang="en")
     body
       .login
         h1 登录
-        form.form(method="post", action="admin/user/login" style="margin-top:20%;")
+        if errinfo
+            p.errinfo #{errinfo}
+        form.form(method="post", action="/login" style="margin-top:20%;")
           label(for="signupName") 用户名
           input#signupName.input-sing(name="user[name]", type="text",required='true')
           label(for="signupPassword") 密码&nbsp;&nbsp;&nbsp;

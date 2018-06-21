@@ -13,3 +13,4 @@ body {font: normal 100% Helvetica, Arial, sans-serif;background-image: url('/ima
 .btn-signin:hover,
 .register:hover {color: #000;background-color: #6a6f77;}
 label{font-size: 1.8rem}
+.errinfo{color: red;}

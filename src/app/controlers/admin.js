@@ -20,6 +20,7 @@ export const adminindex = async ctx => {
             pageNum = pageCount
         }
         await ctx.render('admin/admin', {
+            title:'文章列表',
             posts: post.slice((pageNum - 1) * pageSize, pageSize * pageNum),
             pageNum: pageNum,
             pageCount: pageCount,

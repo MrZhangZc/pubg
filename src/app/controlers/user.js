@@ -49,11 +49,6 @@ export const userlogin = async ctx => {
         let password = _user.password
 
         let zzc = await User.findOne({ name: name })
-        console.log('找到了用户',zzc)
-        if (!zzc) {
-            console.log('该用户名不存在,请核对后再登录')
-            ctx.response.redirect('/register')
-        } else {
             let trueuser = await zzc.conparePassword(password)
 
             if (trueuser) {
@@ -65,13 +60,13 @@ export const userlogin = async ctx => {
                 }
                 console.log('session中的用户', ctx.session)
                 ctx.response.redirect('/')
-            } else {
-                console.log('出错啦')
-                ctx.response.redirect('/register')
             }
-        }
     } catch (err) {
-        console.log('注册出错', err)
+        console.log('登录出错', err)
+        const errinfo = '用户名或密码出错,请重新填写'
+        await ctx.render('page/login', {
+            errinfo: errinfo
+        })
     }
 }
 
