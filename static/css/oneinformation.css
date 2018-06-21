@@ -14,8 +14,7 @@ body {
 .name{
     font-size: 2rem;
     color: #F3BF2C;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    text-align: center;
 }
 .time {
     font-size: 0.8rem;
