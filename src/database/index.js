@@ -3,8 +3,9 @@ import mongoose from 'mongoose'
 import config from '../config'
 
 require('../app/schema/post')
-require('../app/schema/weapon')
+require('../app/schema/forum')
 require('../app/schema/user')
+require('../app/schema/comment')
 
 export const database = () => {
     mongoose.set('debug', true)

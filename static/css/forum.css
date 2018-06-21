@@ -1,0 +1,64 @@
+body{background-image: url('/images/bg2.jpg');background-attachment: fixed;background-size: 100% 100%;font: normal 100% Helvetica, Arial, sans-serif;}
+.header {
+    width: 100%;
+    height: 4rem;
+    background-color: #1E1E1E;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    color: #96ADC9;
+}
+.header .header_left{display: flex;align-items: center;}
+.logo {width: 3rem;height: 3rem;max-width: 100%;}
+.content{width: 98%;margin: 7rem auto;background-color: #fff;padding-top: 2rem;}
+table {
+    width: 92%;
+    border: 1px solid #ccc;
+    margin: 2em auto;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+th{
+    text-align: left;
+}
+
+td {
+    text-align: left;
+    border-top: 1px solid #ccc;
+    height: 2em;
+    background-color: #fff;
+}
+td:hover{
+    background-color: #ccc;
+}
+.issue{
+    width: 5rem;
+    height: 1.5rem;
+    background-color: #0C87DD;
+    display: block;
+    margin-left: 3rem;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.del {
+    background-color: red;
+    width: 3em;
+}
+
+.paeg ul {
+    display: flex;
+}
+
+.paeg .anniu a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 3em;
+}

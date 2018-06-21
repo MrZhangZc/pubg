@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen")
+    link(rel="stylesheet", href="/css/reset.css")
+    title #{title}
+  body
+    h2.page.header 添加文章
+    form.vertical-form(method="post", action="add")
+      label(for="title") 标题
+      input.form-control.input-lg(name="title", required='true',placeholder="请输入标题。。。")
+      label(for="content") 内容
+      textarea#js-post-content.form-control(name="content", required='true')
+      button(type="submit") 发布
+    script(src="/js/ckeditor/ckeditor.js")
+    script.
+      if(typeof CKEDITOR !== 'undefined')
+        CKEDITOR.replace('js-post-content')

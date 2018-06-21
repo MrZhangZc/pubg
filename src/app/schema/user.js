@@ -10,7 +10,10 @@ const UserSchema = new Schema({
         type: String,
         default: '未填写'
     },
-    headimg: Array,
+    headimg: {
+        type: String,
+        default: '/images/boy.jpg'
+    },
     rank: {
         type: Number,
         default: 0

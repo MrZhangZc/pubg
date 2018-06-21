@@ -1,11 +1,35 @@
-extends ../layout
-block css
-  link(rel="stylesheet", href="/css/gamenews.css")
-block content
-  .content
-    .content_nav
-      a(href="/exploits") 战绩查询
-      a(href="/equip") 武器装备
-      a(href="/forum") 游戏论坛
-      a(href="/persion") 个人中心
-    h1 我是游戏新闻
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen")
+    link(rel="stylesheet", href="/css/reset.css")
+    link(rel="stylesheet", href="/css/forum.css")
+    title #{title}
+  body
+    .header
+      .header_left
+        img.logo(src="/images/logo.png", alt="恰鸡盒")
+        a(href="/") &nbsp;&nbsp;返回主页
+      .header_hello
+        a 欢迎来到恰鸡盒吃鸡论坛
+    .content
+      a.issue(href="/forum/add") 我要发帖
+      table
+        thead
+          tr
+            th 帖子名称
+            th 作者
+            th 发帖时间
+            th 回复
+        tbody
+        each forum in forums
+          tr
+            td
+              a(href="/detailspost/" + forum._id, target="_black") #{truncate(forum.title,30)}
+            td #{forum.author.name}
+            td #{moment(forum.meta.createdAt).format('YYYY-MM-DD, h:mm:ss a')}
+            td #{forum.comments.length}
+        

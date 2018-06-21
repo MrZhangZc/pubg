@@ -1,7 +1,7 @@
 import Router from 'koa-router'
 import { posts, post} from '../app/controlers/post'
 import { adminindex, addpost, postadd, deletes, edit, userlist, userup, userdown } from '../app/controlers/admin'
-import { home, exploits, equip, forum, persion} from '../app/controlers/page'
+import { home, exploits, equip, forum, oneforum, addforum, addforumpost,comment, persion} from '../app/controlers/page'
 import { register, login, userinfo, userlogin, logout, uploadimg, pubgapi, pubgapip, signinRequired, adminRequired } from '../app/controlers/user'
 
 export const router = app => {
@@ -11,7 +11,11 @@ export const router = app => {
     router.get('/', home)
     router.get('/exploits', exploits)
     router.get('/equip', equip)
-    router.get('/forum', forum)
+    router.get('/forum', forum) 
+    router.get('/detailspost/:id', oneforum)
+    router.get('/forum/add', addforum)
+    router.post("/forum/add", addforumpost)
+    router.post("/forum/comment/:id", comment)
     router.get('/persion', persion)
 
     //user

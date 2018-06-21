@@ -1,0 +1,133 @@
+body {
+    background-image: url('/images/bg2.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font: normal 100% Helvetica, Arial, sans-serif;
+}
+.header {
+    width: 100%;
+    height: 4rem;
+    background-color: #1E1E1E;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    color: #96ADC9;
+}
+
+.header .header_left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 3rem;
+    height: 3rem;
+    max-width: 100%;
+}
+
+.content {
+    width: 98%;
+    margin: 3rem auto;
+    background-color: #fff;
+}
+
+.content_main {
+    width: 98%;
+    display: flex;
+}
+
+.content_left {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 1px #E4E4E6;
+    background-color: #E5EDF2;
+    padding-top: 2rem;
+}
+.content_left .username{
+    margin-bottom: 2rem;
+}
+.content_left .gamename{
+    margin-top: 1rem;
+}
+.content_left .autograph{
+    margin-bottom: 2rem;
+}
+
+.content_right {
+    width: 80%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+img {
+    width: 5rem;
+    height: 6rem;
+    border-radius: 50%;
+}
+
+.post-comment-item{
+    width: 98%;
+    display: flex;
+}
+.post-comment-item-left{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 1px #E4E4E6;
+    background-color: #E5EDF2;
+    padding-top: 2rem;
+}
+.post-comment-item-right{
+    width: 80%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+.conts{
+    width: 98%;
+    margin: 2rem auto;
+    background-color: #fff;
+}
+.forum-comment-title{
+    color: #fff;
+    margin-left: 2rem;
+}
+
+.form-comment{
+    width: 98%;
+    margin: 2rem auto;
+    background-color: #fff;
+    width: 98%;
+    display: flex;
+}
+.form-comment-left{
+    width: 20%;
+    box-shadow: 2px 0 1px #E4E4E6;
+    background-color: #E5EDF2;
+    padding-top: 2rem;
+} 
+.form-comment-right{
+    width: 80%;
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+textarea{
+    width: 80%;
+    height: 3rem;
+}
+
+.btn{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 5rem;
+    height: 2rem;
+}
+.forum-comment-add{
+    color: #000;
+    text-align: center;
+}

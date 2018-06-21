@@ -35,7 +35,7 @@ export const userinfo = async ctx => {
         const opts = ctx.request.body.user
         const user = new User(opts)
         console.log('新注册的用户',user)
-        const saveInfo = await user.save() // 保存数据
+        const saveInfo = await user.save()
         ctx.response.redirect('/login')
     }catch(err){
         console.log('注册出错',err)

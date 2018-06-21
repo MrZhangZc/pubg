@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen")
+    link(rel="stylesheet", href="/css/reset.css")
+    link(rel="stylesheet", href="/css/aforum.css")
+    title #{title}
+  body
+    .header
+      .header_left
+        img.logo(src="/images/logo.png", alt="恰鸡盒")
+        a(href="/") &nbsp;&nbsp;返回主页
+      .header_hello
+        a 欢迎来到恰鸡盒吃鸡论坛
+    .content
+      .content_main
+        .content_left
+          p.username #{forum.author.name}
+          img(src= forum.author.headimg, alt="", srcset="")
+          p 游戏昵称:
+          p #{forum.author.gamename}
+          p.gamename 个性签名：
+          p.autograph #{forum.author.autograph}
+        .content_right
+          p!= forum.content
+    .forum-comment-list
+      if forum.comments.length
+        p.forum-comment-title 玩家评论
+        each comment in forum.comments
+          .conts
+            .post-comment-item
+              .post-comment-item-left
+                p #{comment.from.name}
+                img(src=comment.from.headimg, alt="", srcset="")
+                p 游戏昵称:
+                p #{comment.from.gamename}
+                p.gamename 个性签名：
+                p.autograph #{comment.from.autograph}
+              .post-comment-item-right
+                p #{comment.content}
+    .form-comment
+      .form-comment-left
+        p.forum-comment-add 添加评论
+      .form-comment-right
+        form.post-comment-form(action="/forum/comment/" + forum._id, method="post", enctype="application/x-www-form-urlencoded")
+          .form-group
+            textarea.form-control(type="text", name="content", placeholder="请输入内容...")
+          button.btn 提交
+        

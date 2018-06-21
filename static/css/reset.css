@@ -1,5 +1,5 @@
 * {margin: 0;padding: 0;list-style: none;text-decoration: none;}
-a {color: #96ADC9;font-size: 0.8rem}
+a {color: #96ADC9;font-size: 0.8rem;text-decoration: none;cursor: pointer;}
 img {max-width: 100%;}
 a:hover {color: sandybrown;}
 .active {color: sandybrown;}
