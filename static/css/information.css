@@ -9,7 +9,7 @@ body {
     width: 70%;
     margin: 0 auto;
     margin-top: 18%;
-    background-color: #333333;
+    
 }
 
 .container .information .con {
@@ -24,4 +24,8 @@ body {
 
 .container .bullet {
     color: #fff;
+}
+.con{
+    margin-top: 3rem;
+    background-color: #333333;
 }

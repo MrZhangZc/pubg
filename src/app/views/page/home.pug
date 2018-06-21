@@ -19,7 +19,7 @@ block content
         h1 游戏攻略
         each post in posts
           .content_right_main
-            a(href='/post/' + post._id, target="_black") #{truncate(post.title,30)}
+            a(href='/post/' + post._id, target="_black") #{truncate(post.title,11)}
             p #{moment(post.meta.createdAt).format('YYYY-MM-DD')}
         p.more
           a(href='/posts') 更多资讯》》

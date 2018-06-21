@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 import truncate from 'truncate'
 import slug from 'slug'
+import moment from 'moment'
+
 
 const Post = mongoose.model('Post')
 
@@ -30,14 +32,8 @@ export const posts = async ctx => {
 }
 
 export const post = async ctx => {
-    var conditions = {};
-    try {
-        conditions._id = mongoose.Types.ObjectId(ctx.params.id)
-    } catch (err) {
-        conditions.slug = ctx.params.id
-    }
-
-    let post = await Post.findById(conditions)
+    ctx.state.moment = moment
+    let post = await Post.findById({_id: ctx.params.id})
     await ctx.render('page/post', {
         title: '文章详情',
         post: post

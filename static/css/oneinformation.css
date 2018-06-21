@@ -4,3 +4,21 @@ body {
     background-attachment: fixed;
     background-size: 100% 100%;
 }
+.postju{
+    width: 80%;
+    background-color: #fff;
+    margin: 10rem auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+.name{
+    font-size: 2rem;
+    color: #F3BF2C;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+.time {
+    font-size: 0.8rem;
+    margin-left: 2rem;
+    margin-bottom: 5rem;
+}
