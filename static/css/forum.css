@@ -35,13 +35,14 @@ td:hover{
     background-color: #ccc;
 }
 .issue{
-    width: 5rem;
+    width: 7rem;
     height: 1.5rem;
     background-color: #0C87DD;
     display: block;
     margin-left: 3rem;
     text-align: center;
     line-height: 1.5rem;
+    color: #000;
 }
 
 .del {

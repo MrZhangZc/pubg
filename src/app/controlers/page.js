@@ -54,13 +54,24 @@ export const forum = async ctx => {
         ctx.state.user = _user
         ctx.state.moment = moment
         ctx.state.truncate = truncate
+        let auser = await User.findOne({_id:_user._id})
+        console.log(auser)
         let forums = await Forum.find().populate('author').sort({ '_id': -1 })
         await ctx.render('page/forum', {
             title: '游戏论坛',
-            forums: forums
+            forums: forums,
+            auser: auser
         })
     } catch (err) {
-        console.log('游戏论坛出错', err)
+        let _user = ctx.session.user
+        ctx.state.user = _user
+        ctx.state.moment = moment
+        ctx.state.truncate = truncate
+        let forums = await Forum.find().populate('author').sort({ '_id': -1 })
+        await ctx.render('page/forum', {
+            title: '游戏论坛',
+            forums: forums,
+        })
     }
 }
 
@@ -69,8 +80,8 @@ export const oneforum = async ctx => {
         let _user = ctx.session.user
         ctx.state.user = _user
         let id = ctx.params.id
-        let user = await User.findOne({ _id: _user._id })
-        if (user.sex == '女'){
+        let auser = await User.findOne({ _id: _user._id })
+        if (auser.sex == '女'){
             const update = { $set: { headimg: "/images/girl.jpg" } }
             let girl = await User.update({ _id: _user._id }, update)
         }
@@ -78,10 +89,17 @@ export const oneforum = async ctx => {
         console.log(forum)
         await ctx.render('page/aforum', {
             title: '帖子详情',
-            forum: forum
+            forum: forum,
+            auser: auser
         })
     } catch (err) {
-        console.log('帖子详情出错', err)
+        let id = ctx.params.id
+        let forum = await Forum.findOne({ _id: id }).populate('author')
+        console.log(forum)
+        await ctx.render('page/aforum', {
+            title: '帖子详情',
+            forum: forum
+        })
     }
 }
 

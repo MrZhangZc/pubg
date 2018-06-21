@@ -131,3 +131,15 @@ textarea{
     color: #000;
     text-align: center;
 }
+.issue{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    width: 7rem;
+    height: 2rem;
+    display: block;
+    text-align: center;
+    line-height: 2rem;
+    background-color: #96ADC9;
+    color: #000;
+    border-radius: 10px;
+}

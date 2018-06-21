@@ -91,6 +91,7 @@ export const userup = async ctx => {
     let vipuser = await User.update({ _id: id }, updates)
     ctx.response.redirect('/admin/userlist')
 }
+
 export const userdown = async ctx => {
     const id = ctx.params.id
     const updates = { $set: { role: "普通用户" } }

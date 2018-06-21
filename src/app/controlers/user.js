@@ -191,4 +191,14 @@ export const adminRequired = async (ctx,next) => {
     }
 }
 
+export const allinfoRequired = async (ctx, next) => {
+    let user = ctx.session.user
+    let auser = await User.findOne({_id:user._id})
+    if (auser.gamename !== '管理员') {
+        await next()
+    } else {
+        ctx.redirect('/forum')
+    }
+}
+
 

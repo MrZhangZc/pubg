@@ -1,0 +1,17 @@
+body {
+    background-image: url('/images/bg2.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font: normal 100% Helvetica, Arial, sans-serif;
+}
+
+.label-lg{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn{
+    margin-top: 2rem;
+    width: 5rem;
+    height: 2rem;
+}

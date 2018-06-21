@@ -48,5 +48,11 @@ html(lang="en")
         form.post-comment-form(action="/forum/comment/" + forum._id, method="post", enctype="application/x-www-form-urlencoded")
           .form-group
             textarea.form-control(type="text", name="content", placeholder="请输入内容...")
-          button.btn 提交
+          if user
+            if auser.gamename == '未填写'
+              a.issue(href="/persion") 完善信息后评论
+            else
+              button.btn 提交
+          else
+            a.issue(href="/persion") 登录后评论
         

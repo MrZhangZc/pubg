@@ -16,7 +16,13 @@ html(lang="en")
       .header_hello
         a 欢迎来到恰鸡盒吃鸡论坛
     .content
-      a.issue(href="/forum/add") 我要发帖
+      if user
+        if auser.gamename == '未填写'
+          a.issue(href="/persion") 完善信息发帖
+        else
+          a.issue(href="/forum/add") 我要发帖
+      else
+        a.issue(href="/login") 请登录后发帖
       table
         thead
           tr
