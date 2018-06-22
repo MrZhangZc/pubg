@@ -49,18 +49,21 @@ export const userlogin = async ctx => {
         let password = _user.password
 
         let zzc = await User.findOne({ name: name })
-            let trueuser = await zzc.conparePassword(password)
+        let trueuser = await zzc.conparePassword(password)
+        console.log('22222222222', zzc)
 
-            if (trueuser) {
-                ctx.session.user = {
-                    _id: zzc._id,
-                    name: zzc.name,
-                    role: zzc.role,
-                    sex : zzc.sex
-                }
-                console.log('session中的用户', ctx.session)
-                ctx.response.redirect('/')
+        if (trueuser) {
+            ctx.session.user = {
+                _id: zzc._id,
+                name: zzc.name,
+                role: zzc.role,
+                sex : zzc.sex
             }
+            console.log('session中的用户', ctx.session)
+            ctx.response.redirect('/')
+        }else{
+            throw new Error('出错')
+        }
     } catch (err) {
         console.log('登录出错', err)
         const errinfo = '用户名或密码出错,请重新填写'
