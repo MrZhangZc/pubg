@@ -10,20 +10,20 @@ html(lang="en")
         title #{title}
     body
         .container
-            .information
-                each post in posts
-                    .con
-                        .name
-                            a(href='/post/' + post._id, target="_black") #{truncate(post.title,20)}
-                        .bullet!= truncate(post.content,300)
-                if pageCount > 1
-                    nav.paeg
-                        ul
-                            - var currentPage = 1
-                            while currentPage < pageCount
-                                if(currentPage === pageNum)
-                                    li.active
-                                        a(href="?page=" + currentPage)= currentPage++
-                                else
-                                    li
-                                        a(href="?page=" + currentPage)= currentPage++
+          .information
+            each post in posts
+              .con
+                .name
+                  a(href='/post/' + post._id, target="_black") #{truncate(post.title,20)}
+                .bullet!= truncate(post.content,300)
+            if pageCount > 1
+              nav.paeg
+                ul
+                  - var currentPage = 1
+                  while currentPage < pageCount
+                    if(currentPage === pageNum)
+                      li.active
+                        a(href="?page=" + currentPage)= currentPage++
+                    else
+                      li
+                        a(href="?page=" + currentPage)= currentPage++
