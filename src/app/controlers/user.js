@@ -125,6 +125,11 @@ export const pubgapi = async ctx => {
         
     }catch(err){
         console.log('查询出错',err)
+        const errinfo = '该玩家不存在，请核对后重新输入'
+        await ctx.render('page/exploits', {
+            title: '战绩查询',
+            errinfo: errinfo
+        })
     }
 }
 

@@ -1,0 +1,30 @@
+.weapena{
+    display: block;
+    margin-left: 2rem;
+    line-height: 2rem;
+}
+.bgcontent{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 2rem;
+}
+.bgcon{
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 2rem auto;
+    padding-top: 2rem;
+}
+.cartgory{
+    color: #fff;
+    margin-left: 9rem;
+}
+.weapenname{
+    color: #fff;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+} 
+.weapeimg{
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+    width: 70%;
+}

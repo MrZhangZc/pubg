@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen")
+    link(rel="stylesheet", href="/css/base.css")
+    link(rel="stylesheet", href="/css/weapen.css")
+    title #{title}
+  body
+    a.weapena(href="/") 回到主页
+    .bgcontent
+      p.cartgory #{cartgory}
+      each weapen in weapens
+        .bgcon
+          p.weapenname #{weapen.name}
+          img.weapeimg(src= weapen.img , alt="", srcset="")

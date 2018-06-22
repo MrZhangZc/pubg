@@ -1,12 +1,13 @@
 import Router from 'koa-router'
 import { posts, post} from '../app/controlers/post'
 import { adminindex, addpost, postadd, deletes, edit, userlist, userup, userdown } from '../app/controlers/admin'
-import { home, exploits, equip, forum, oneforum, addforum, addforumpost,comment, persion} from '../app/controlers/page'
+import { armor, consumable, parts, sniperrifle, rifle, shotgun, submachinegun, miscellaneous, pistol, closeweapon, investment } from '../app/controlers/weapon'
+import { home, exploits, equip, forum, oneforum, addforum, addforumpost, comment, persion} from '../app/controlers/page'
 import { register, login, userinfo, userlogin, logout, uploadimg, pubgapi, pubgapip, signinRequired, adminRequired, allinfoRequired } from '../app/controlers/user'
 
 export const router = app => {
     const router = new Router()
-
+    
     //page
     router.get('/', home)
     router.get('/exploits', exploits)
@@ -17,6 +18,18 @@ export const router = app => {
     router.post("/forum/add", addforumpost)
     router.post("/forum/comment/:id", comment)
     router.get('/persion', persion)
+    //weapon
+    router.get('/armor', armor)
+    router.get('/consumable', consumable)
+    router.get('/parts', parts)
+    router.get('/sniperrifle', sniperrifle)
+    router.get('/rifle', rifle)
+    router.get('/submachinegun', submachinegun)
+    router.get('/miscellaneous', miscellaneous)
+    router.get('/pistol', pistol)
+    router.get('/shotgun', shotgun)
+    router.get('/closeweapon', closeweapon)
+    router.get('/investment', investment)
 
     //user
     router.get('/register', register)
