@@ -5,16 +5,15 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     link(rel="shortcut  icon" type="image/x-icon" href="/images/favicon.ico" media="screen")
-    link(rel="stylesheet", href="/css/reset.css")
     link(rel="stylesheet", href="/css/forum.css")
     title #{title}
   body
     .header
       .header_left
         img.logo(src="/images/logo.png", alt="恰鸡盒")
-        a(href="/") &nbsp;&nbsp;返回主页
+        a.back(href="/") &nbsp;&nbsp;返回主页
       .header_hello
-        a 欢迎来到恰鸡盒吃鸡论坛
+        a.back 欢迎来到恰鸡盒吃鸡论坛
     .content
       if user
         if auser.gamename == '未填写'

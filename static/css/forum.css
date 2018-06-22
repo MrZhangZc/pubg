@@ -1,3 +1,23 @@
+* {margin: 0;padding: 0;list-style: none;text-decoration: none;}
+.back {
+    color: #96ADC9;
+    font-size: 0.8rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+img {max-width: 100%;}
+a:hover {color: sandybrown;}
+.active {color: sandybrown;}
+html,body {width: 100%;height: 100%;}
+body {font: normal 100% Helvetica, Arial, sans-serif;}
+html,body,.container-fluid {height: 100%;}
+.top_bar {width: 100%;height: 3.5em;background-color: #222222;}
+.top_bar p {color: white;line-height: 3.5em;margin-left: 2em;font-weight: bold;}
+.container-fluid {width: 17em;background-color: #F5F5F5;float: left;}
+.nav {margin-left: 3em;line-height: 2em;margin-top: 2em;}
+.active {background-color: pink;}
+.nav {width: 10em;height: 2em;}
+.nava {width: 10em;height: 2em;border: 1px solid #000;display: inline-block;text-align: center;line-height: 2em;}
 body{background-image: url('/images/bg2.jpg');background-attachment: fixed;background-size: 100% 100%;font: normal 100% Helvetica, Arial, sans-serif;}
 .header {
     width: 100%;
@@ -8,11 +28,10 @@ body{background-image: url('/images/bg2.jpg');background-attachment: fixed;backg
     justify-content: space-between;
     font-size: 1.5rem;
     line-height: 4rem;
-    color: #96ADC9;
 }
 .header .header_left{display: flex;align-items: center;}
 .logo {width: 3rem;height: 3rem;max-width: 100%;}
-.content{width: 98%;margin: 7rem auto;background-color: #fff;padding-top: 2rem;}
+.content{width: 98%;margin: 7rem auto;padding-top: 2rem;background-image: url('/images/bg5.jpg');padding-bottom: 5rem;}
 table {
     width: 92%;
     border: 1px solid #ccc;
@@ -20,7 +39,12 @@ table {
     border-collapse:collapse;
     border-spacing:0;
 }
-
+table, th,tr,td{
+    background-image: url('/images/bg5.jpg')
+}
+tb a{
+    color: #000;
+}
 th{
     text-align: left;
 }
