@@ -31,7 +31,13 @@ body{background-image: url('/images/bg2.jpg');background-attachment: fixed;backg
 }
 .header .header_left{display: flex;align-items: center;}
 .logo {width: 3rem;height: 3rem;max-width: 100%;}
-.content{width: 98%;margin: 7rem auto;padding-top: 2rem;background-image: url('/images/bg5.jpg');padding-bottom: 5rem;}
+.content {
+    width: 98%;
+    margin: 7rem auto;
+    padding-top: 2rem;
+    background-image: url('/images/bg5.png');
+    padding-bottom: 5rem;
+}
 table {
     width: 92%;
     border: 1px solid #ccc;
@@ -40,7 +46,7 @@ table {
     border-spacing:0;
 }
 table, th,tr,td{
-    background-image: url('/images/bg5.jpg')
+    background-image: url('/images/bg5.png')
 }
 tb a{
     color: #000;
