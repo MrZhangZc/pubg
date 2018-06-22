@@ -9,6 +9,7 @@ html(lang="en")
     link(rel="stylesheet", href="/css/oneinformation.css")
     title #{title}
   body
+    a(href="/") 回到主页
     .postju
       .name #{post.title}
       .time #{moment(post.meta.createdAt).format('YYYY-MM-DD, h:mm:ss a')}
