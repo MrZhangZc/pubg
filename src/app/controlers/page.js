@@ -14,7 +14,7 @@ export const home = async ctx => {
         ctx.state.user = _user
         ctx.state.moment = moment
         ctx.state.truncate = truncate
-        let post = await Post.find()
+        let post = await Post.find().sort({ '_id': -1 })
         await ctx.render('page/home', {
             title: '恰鸡盒',
             posts: post.slice(0,13)
