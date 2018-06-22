@@ -33,12 +33,21 @@ export const login = async ctx => {
 export const userinfo = async ctx => {
     try{
         const opts = ctx.request.body.user
+        //console.log('222222222',opts)
+        let auser = await User.findOne({name: opts.name})
+        if (auser !== null){
+            throw new Error('用户已存在')
+        }
         const user = new User(opts)
         console.log('新注册的用户',user)
         const saveInfo = await user.save()
         ctx.response.redirect('/login')
     }catch(err){
         console.log('注册出错',err)
+        const errinfo = '用户已存在'
+        await ctx.render('page/register', {
+            errinfo: errinfo
+        })
     }
 }
 

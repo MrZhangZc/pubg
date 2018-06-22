@@ -10,7 +10,8 @@ html(lang="en")
     body
       .register
         h1 注册
-        form.form(method="post", action="admin/user/register" style="margin-top:20%;")
+        p.registerp #{errinfo}
+        form.form(method="post", action="/register" style="margin-top:20%;")
           label(for="signupName") 用户名
           input#signupName.input-sing(name="user[name]", type="text",required='true')
           label(for="signupPassword") 密码&nbsp;&nbsp;&nbsp;

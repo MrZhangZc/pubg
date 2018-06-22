@@ -34,7 +34,7 @@ export const router = app => {
     //user
     router.get('/register', register)
     router.get('/login', login)
-    router.post('/admin/user/register', userinfo)
+    router.post('/register', userinfo)
     router.post('/login', userlogin)
     router.get('/logout', logout)
     router.post('/uploadimg', uploadimg)
