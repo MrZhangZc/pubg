@@ -33,7 +33,7 @@ html(lang="en")
         each forum in forums
           tr
             td
-              a(href="/detailspost/" + forum._id, target="_black") #{truncate(forum.title,30)}
+              a.aaa(href="/detailspost/" + forum._id, target="_black") #{truncate(forum.title,30)}
             td #{forum.author.name}
             td #{moment(forum.meta.createdAt).format('YYYY-MM-DD, h:mm:ss a')}
             td #{forum.comments.length}

@@ -6,8 +6,6 @@
     cursor: pointer;
 }
 img {max-width: 100%;}
-a:hover {color: sandybrown;}
-.active {color: sandybrown;}
 html,body {width: 100%;height: 100%;}
 body {font: normal 100% Helvetica, Arial, sans-serif;}
 html,body,.container-fluid {height: 100%;}
@@ -15,7 +13,6 @@ html,body,.container-fluid {height: 100%;}
 .top_bar p {color: white;line-height: 3.5em;margin-left: 2em;font-weight: bold;}
 .container-fluid {width: 17em;background-color: #F5F5F5;float: left;}
 .nav {margin-left: 3em;line-height: 2em;margin-top: 2em;}
-.active {background-color: pink;}
 .nav {width: 10em;height: 2em;}
 .nava {width: 10em;height: 2em;border: 1px solid #000;display: inline-block;text-align: center;line-height: 2em;}
 body{background-image: url('/images/bg2.jpg');background-attachment: fixed;background-size: 100% 100%;font: normal 100% Helvetica, Arial, sans-serif;}
@@ -35,21 +32,21 @@ body{background-image: url('/images/bg2.jpg');background-attachment: fixed;backg
     width: 98%;
     margin: 7rem auto;
     padding-top: 2rem;
-    background-image: url('/images/bg5.png');
+    background-color: rgba(0, 0, 0, 0.5);
     padding-bottom: 5rem;
 }
 table {
     width: 92%;
-    border: 1px solid #ccc;
     margin: 2em auto;
     border-collapse:collapse;
     border-spacing:0;
+    color: #fff;
 }
 table, th,tr,td{
-    background-image: url('/images/bg5.png')
+    background-color: rgba(0, 0, 0, 0.5);
 }
-tb a{
-    color: #000;
+.aaa{
+    color: #ffcc33;
 }
 th{
     text-align: left;
@@ -57,9 +54,7 @@ th{
 
 td {
     text-align: left;
-    border-top: 1px solid #ccc;
     height: 2em;
-    background-color: #fff;
 }
 td:hover{
     background-color: #ccc;
@@ -67,7 +62,7 @@ td:hover{
 .issue{
     width: 7rem;
     height: 1.5rem;
-    background-color: #0C87DD;
+    background-color: #ccc;
     display: block;
     margin-left: 3rem;
     text-align: center;
