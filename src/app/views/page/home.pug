@@ -29,17 +29,4 @@ block content
             a(href='/post/' + post._id, target="_black") #{truncate(post.title,18)}
             p #{moment(post.meta.createdAt).format('YYYY-MM-DD')}
         p.more
-          a(href='/posts') 更多资讯》》
-    script(src="/js/myfocus-2.0.4.min.js")
-    script(src="/js/mf-pattern/mF_YSlider.js")
-    link(href="/js/mf-pattern/mF_YSlider.css" type="text/css" )
-    script.
-      myFocus.set({
-        id:'boxID',//焦点图盒子ID
-        pattern:'mF_YSlider',//风格应用的名称
-        time:3,//切换时间间隔(秒)
-        trigger:'click',//触发切换模式:'click'(点击)/'mouseover'(悬停)
-        width:850,//设置图片区域宽度(像素)
-        height:400,//设置图片区域高度(像素)
-        txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
-      });
+          a(href='/posts') 更多资讯》
