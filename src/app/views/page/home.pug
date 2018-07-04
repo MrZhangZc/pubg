@@ -10,11 +10,18 @@ block content
       a(href="/persion") 个人中心
     .content_main
       .content_left
-        .sidle_container
-          .sidle_list
-            img(src="/images/1.jpg", alt="")
-            img(src="/images/2.jpg", alt="")
-            img(src="/images/3.jpg", alt="")
+        #boxID
+          .pic
+            ul
+              li
+                a(href="#")
+                  img(src="/images/1.jpg", alt="213")
+              li
+                a(href="#")
+                  img(src="/images/2.jpg", alt="213213")
+              li
+                a(href="#")
+                  img(src="/images/3.jpg", alt="332")
       .content_right
         h1 游戏攻略
         each post in posts
@@ -23,4 +30,16 @@ block content
             p #{moment(post.meta.createdAt).format('YYYY-MM-DD')}
         p.more
           a(href='/posts') 更多资讯》》
-    //- script(src="/js/slider.js")
+    script(src="/js/myfocus-2.0.4.min.js")
+    script(src="/js/mf-pattern/mF_YSlider.js")
+    link(href="/js/mf-pattern/mF_YSlider.css" type="text/css" )
+    script.
+      myFocus.set({
+        id:'boxID',//焦点图盒子ID
+        pattern:'mF_YSlider',//风格应用的名称
+        time:3,//切换时间间隔(秒)
+        trigger:'click',//触发切换模式:'click'(点击)/'mouseover'(悬停)
+        width:850,//设置图片区域宽度(像素)
+        height:400,//设置图片区域高度(像素)
+        txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
+      });
