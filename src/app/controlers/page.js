@@ -36,6 +36,16 @@ export const exploits = async ctx => {
     }
 }
 
+export const zhanji = async ctx => {
+    try {
+        await ctx.render('page/zhanji', {
+            title: '战绩查询'
+        })
+    } catch (err) {
+        console.log('战绩查询出错', err)
+    }
+}
+
 export const equip = async ctx => {
     try {
         let _user = ctx.session.user

@@ -2,7 +2,7 @@ import Router from 'koa-router'
 import { posts, post} from '../app/controlers/post'
 import { adminindex, addpost, postadd, deletes, edit, userlist, userup, userdown } from '../app/controlers/admin'
 import { armor, consumable, parts, sniperrifle, rifle, shotgun, submachinegun, miscellaneous, pistol, closeweapon, investment } from '../app/controlers/weapon'
-import { home, exploits, equip, forum, oneforum, addforum, addforumpost, comment, persion} from '../app/controlers/page'
+import { home, exploits, equip, forum, oneforum, addforum, addforumpost, comment, persion, zhanji} from '../app/controlers/page'
 import { register, login, userinfo, userlogin, logout, uploadimg, pubgapi, pubgapip, signinRequired, adminRequired, allinfoRequired } from '../app/controlers/user'
 
 export const router = app => {
@@ -11,6 +11,7 @@ export const router = app => {
     //page
     router.get('/', home)
     router.get('/exploits', exploits)
+    router.get('/zhanji', zhanji)
     router.get('/equip', equip)
     router.get('/forum', forum) 
     router.get('/detailspost/:id', oneforum)

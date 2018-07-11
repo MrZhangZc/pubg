@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="/css/zhanji.css")
+    link(rel="stylesheet", href="/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/css/style.css")
+    title Document
+  body
+    .navbar.navbar-default.navbar-static-top(role="navigation")
+      .container
+        .navbar-header
+          button.navbar-toggle(data-toggle="collapse" data-target=".navbar-collapse")
+            span.icon.icon-bar
+            span.icon.icon-bar
+            span.icon.icon-bar
+          a.navbar-brand(href="index.html") Blog
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+              li
+                a(href="index.html") 主页
+              li
+                a(href="about.html") 关于
+              li.active
+                a(href="gallery.html") 战绩查询
+              li
+                a(href="contact.html") 联系我们
+    .bgimg
+      form.form(method="post", action="exploits")
+        .content_input
+          lable.lable(for="inputName") 输入昵称
+          input#nickname(type="text", name="nikename")
+          button.btn(type="submit") 查询
+      p.exploerr #{errinfo}
+        if idplayer
+          .info
+            .info_head
+              p.nickname #{idplayer.data.attributes.name}
+              p.season 2018第六赛季
+              p.win 本赛季吃鸡数为 <div style="color:#E3C53C;font-size: 1.3rem;">#{player.solo.wins + player.duo.wins + player.squad.wins}</div>
+              p.kill 本赛季杀敌数为 <div style="color:#E3C53C;font-size: 1.3rem;">#{player.solo.kills + player.duo.kills + player.squad.kills}</div>
+            .sesion_info
+              .solo.aseason 单排
+                p 游戏天数 #{player.solo.days}
+                p 吃鸡次数 #{player.solo.wins}
+                p 击杀次数 #{player.solo.kills}
+                p 爆头击杀次数 #{player.solo.headshotKills}
+                p 击杀分数 #{player.solo.killPoints}
+                p 单场最多杀人数 #{player.solo.roundMostKills}
+                p 救援数 #{player.solo.heals}
+                p 游戏场次 #{player.solo.roundsPlayed}
+                p 吃鸡分数 #{player.solo.winPoints}
+              .duo.aseason 双排
+                p 游戏天数 #{player.duo.days}
+                p 吃鸡次数 #{player.duo.wins}
+                p 击杀次数 #{player.duo.kills}
+                p 爆头击杀次数 #{player.duo.headshotKills}
+                p 击杀分数 #{player.duo.killPoints}
+                p 单场最多杀人数 #{player.duo.roundMostKills}
+                p 救援数 #{player.duo.heals}
+                p 游戏场次 #{player.duo.roundsPlayed}
+                p 吃鸡分数 #{player.duo.winPoints}
+              .squad.aseason 组排
+                p 游戏天数 #{player.squad.days}
+                p 吃鸡次数 #{player.squad.wins}
+                p 击杀次数 #{player.squad.kills}
+                p 爆头击杀次数 #{player.squad.headshotKills}
+                p 击杀分数 #{player.squad.killPoints}
+                p 单场最多杀人数 #{player.squad.roundMostKills}
+                p 救援数 #{player.squad.heals}
+                p 游戏场次 #{player.squad.roundsPlayed}
+                p 吃鸡分数 #{player.squad.winPoints}
