@@ -3,7 +3,7 @@ import { posts, post} from '../app/controlers/post'
 import { adminindex, addpost, postadd, deletes, edit, userlist, userup, userdown } from '../app/controlers/admin'
 import { armor, consumable, parts, sniperrifle, rifle, shotgun, submachinegun, miscellaneous, pistol, closeweapon, investment } from '../app/controlers/weapon'
 import { home, exploits, equip, forum, oneforum, addforum, addforumpost, comment, persion, zhanji} from '../app/controlers/page'
-import { register, login, userinfo, userlogin, logout, uploadimg, pubgapi, pubgapip, signinRequired, adminRequired, allinfoRequired } from '../app/controlers/user'
+import { register, login, userinfo, userlogin, logout, uploadimg, pubgapi, pubgapi2,pubgapip, signinRequired, adminRequired, allinfoRequired } from '../app/controlers/user'
 
 export const router = app => {
     const router = new Router()
@@ -42,6 +42,7 @@ export const router = app => {
 
     //pubg
     router.post('/exploits', pubgapi)
+    router.post('/zhanji', pubgapi2)
     router.post('/persion', pubgapip)
     
     //post

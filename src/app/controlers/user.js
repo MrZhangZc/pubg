@@ -141,7 +141,50 @@ export const pubgapi = async ctx => {
         })
     }
 }
+export const pubgapi2 = async ctx => {
+    try {
+        let _user = ctx.session.user
+        ctx.state.user = _user
+        const nikename = ctx.request.body.nikename
+        console.log(nikename)
+        let userapi = new pApi()
+        let nicknameplayer = await userapi.getPlayersInfo(nikename)
+        // const player = nicknameplayer.data[0].attributes
+        // const playerd = nicknameplayer.data[0].relationships
+        const playerId = nicknameplayer.data[0].id
+        console.log(playerId)
+        let idplayer = await userapi.getPlayerbyId(playerId)
+        // console.log('idplayer', idplayer)
+        // let sesion = await userapi.getCurrentSeason()
+        // console.log('现在的赛季是', sesion)
+        let pstate = await userapi.getPlayerStats(playerId)
+        const player = pstate.data.attributes.gameModeStats
+        console.log('玩家状态是', pstate)
+        console.log('玩家属性', pstate.data.attributes.gameModeStats)
+        // console.log('玩家关系', pstate.data.relationships.matchesDuo)
+        // console.log('玩家关系2', pstate.data.relationships.matchesDuoFPP)
+        // console.log('玩家关系赛季', pstate.data.relationships.season)
+        // console.log('玩家关系玩家', pstate.data.relationships.player)
+        // console.log('玩家关系单排', pstate.data.relationships.matchesSolo)
 
+        // console.log('属性', player)
+        // console.log('关系', playerd)
+        // console.log('数据', nicknameplayer)
+        await ctx.render('page/exploits', {
+            title: '战绩查询',
+            idplayer: idplayer,
+            player: player,
+        })
+
+    } catch (err) {
+        console.log('查询出错', err)
+        const errinfo = '该玩家不存在，请核对后重新输入'
+        await ctx.render('page/zhanji', {
+            title: '战绩查询',
+            errinfo: errinfo
+        })
+    }
+}
 export const pubgapip = async ctx => {
     try {
         let _user = ctx.session.user
