@@ -170,7 +170,7 @@ export const pubgapi2 = async ctx => {
         // console.log('属性', player)
         // console.log('关系', playerd)
         // console.log('数据', nicknameplayer)
-        await ctx.render('page/exploits', {
+        await ctx.render('page/zhanji', {
             title: '战绩查询',
             idplayer: idplayer,
             player: player,
